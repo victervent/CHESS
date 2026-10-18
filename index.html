@@ -995,6 +995,6 @@ theme();
 $('#cards').innerHTML=LIST.map((G,k)=>`<button class="card" style="--c:${G.color}" data-k="${k}"><span class="ico">${G.ico}</span><b>${G.name}</b><small>${G.tag}</small><p>${G.desc}</p></button>`).join('')+`<button class="card" style="--c:#7c3aed" data-k="-1"><span class="ico">🎲</span><b>Ngẫu nhiên</b><small>Không cần chọn</small><p>Máy bốc ngẫu nhiên một trò chơi cho bạn. Kiểu bàn, quân cờ, bản đồ để chế độ 🎲 cũng được đổi mỗi ván.</p></button>`;
 $('#cards').onclick=e=>{const b=e.target.closest('[data-k]');if(!b)return;TR=null;let k=+b.dataset.k;if(k<0)k=Math.random()*LIST.length|0;openGame(LIST[k],[0,1])};
 }catch(e){console.error(e)}
-})();</script>
+})(); </script>
 </body></html>
 
