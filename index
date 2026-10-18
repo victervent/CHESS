@@ -1,0 +1,1000 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Cờ Quán</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&amp;display=swap">
+ <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSReMKzA6oNodezYuqofjeCky_bjWSygzeJn7a_-d1sTQ&s">
+<style>
+:root{--bg:#f6eedd;--bg2:#ecd9b0;--tx:#2b2117;--mu:#7a6650;--pn:#fffaf0;--ln:#dccaa4;--ac:#b4601c;--ac2:#e58d2f;--sh:0 10px 28px #5a3c1a24;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17110c;--bg2:#33241a;--tx:#f3e9d6;--mu:#b9a688;--pn:#2a1f16;--ln:#4a3828;--ac:#e39a3d;--ac2:#ffc86f;--sh:0 10px 28px #0009}}
+:root[data-theme=dark]{--bg:#17110c;--bg2:#33241a;--tx:#f3e9d6;--mu:#b9a688;--pn:#2a1f16;--ln:#4a3828;--ac:#e39a3d;--ac2:#ffc86f;--sh:0 10px 28px #0009}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;min-height:100vh;background-color:var(--bg);background-image:radial-gradient(900px 500px at 50% -10%,var(--bg2),transparent);color:var(--tx);font:15px/1.45 'Be Vietnam Pro',system-ui,sans-serif;display:flex;flex-direction:column;align-items:center}
+.hd{width:100%;max-width:980px;display:flex;justify-content:space-between;align-items:center;padding:12px 16px;font-size:22px;font-weight:800}
+h1{margin:0;font-size:26px}h2{margin:22px 0 10px;font-size:14px;letter-spacing:.09em;text-transform:uppercase;color:var(--mu)}#ov h2{margin:0}
+main{width:100%;max-width:980px;padding:0 16px 40px}
+button,select{font:inherit;color:var(--tx)}
+button{border:0;border-radius:12px;padding:10px 16px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--ac),var(--ac2));cursor:pointer;box-shadow:0 4px 12px #0003;transition:transform .12s}
+button:hover{transform:translateY(-2px)}button.gh{background:var(--pn);color:var(--tx);border:1px solid var(--ln);box-shadow:none}
+select{padding:7px 10px;border-radius:10px;border:1px solid var(--ln);background:var(--pn)}
+.pn{background:var(--pn);border:1px solid var(--ln);border-radius:18px;padding:16px;box-shadow:var(--sh)}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}.st label{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
+.card{text-align:left;color:var(--tx);background:var(--pn);border:1px solid var(--ln);border-top:5px solid var(--c);border-radius:16px;padding:14px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:2px}
+.card .ico{font-size:40px;line-height:1.15;color:var(--c)}.card small{color:var(--mu);font-weight:600}.card p{margin:4px 0 0;font-size:13px;font-weight:400;color:var(--mu)}
+.tr{display:flex;gap:10px;flex-wrap:wrap}.tr button{flex:1;padding:16px;font-size:16px}.note{font-size:13px;color:var(--mu);margin:8px 2px 0}
+#play{width:100%;max-width:900px;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 10px 24px}
+.tbar{width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:800}
+#sc{font-weight:800;color:var(--ac)}
+.bar{display:flex;align-items:center;gap:10px;padding:6px 16px;border-radius:999px;background:var(--pn);border:2px solid var(--ln);min-width:min(96vw,430px);transition:.2s}.bar.on{border-color:var(--ac);box-shadow:0 0 16px var(--ac)}
+.bar i{width:16px;height:16px;border-radius:50%;border:2px solid #0006}.bar em{font-style:normal;flex:1;min-height:1em;letter-spacing:1px}.bar .sd{color:var(--mu);font-size:12px}.clk{font-variant-numeric:tabular-nums;font-weight:800}
+.bd{position:relative;--ar:1;width:min(96vw,max(300px,calc((100dvh - 250px)*var(--ar))));aspect-ratio:var(--ar);filter:drop-shadow(0 14px 22px #0007)}.bd svg{width:100%;height:100%;display:block}
+#st{font-weight:700;min-height:22px;text-align:center}.acts{display:flex;gap:10px}
+#pr{position:absolute;inset:0;display:flex;gap:12px;align-items:center;justify-content:center;background:#0007;border-radius:12px}#pr button{font-size:44px;padding:4px 18px;background:#fffaf0;color:#111}
+#ov{position:fixed;inset:0;display:grid;place-items:center;background:#000b;z-index:9;padding:env(safe-area-inset-top,0px) 12px env(safe-area-inset-bottom,0px)}
+#ov .pn{width:min(94vw,440px);text-align:center;display:grid;gap:10px;max-height:90dvh;overflow:auto}#ov ul{text-align:left;margin:0;padding-left:20px}
+.big{font-size:22px;font-weight:800;margin:0}table{width:100%;border-collapse:collapse}td{padding:5px 6px;border-bottom:1px solid var(--ln);text-align:left}
+svg text{font-family:'Be Vietnam Pro','Noto Sans CJK SC','Noto Serif CJK SC',SimSun,serif;user-select:none}
+[data-i],[data-k]{cursor:pointer}.sl{animation:sl .22s ease-out}@keyframes sl{from{transform:translate(var(--dx),var(--dy))}}
+.pp{animation:pp .25s;transform-box:fill-box;transform-origin:center}@keyframes pp{from{transform:scale(1.5);opacity:0}}
+.frame{fill:#3b2a1c;stroke:#c9a25f;stroke-width:3}.sql{fill:#f0d9b5}.sqd{fill:#b58863}
+.hl-last{fill:#ffe45c;opacity:.5}.hl-sel{fill:#4dff91;opacity:.65}.hl-chk{fill:#ff3b3b;opacity:.65}
+.gp{text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.gp.s0{fill:#fff;stroke:#222;stroke-width:1.5;paint-order:stroke}.gp.s1{fill:#1b1b1f;stroke:#f3e9d0;stroke-width:1;paint-order:stroke}
+.hint{fill:#16a34a;opacity:.8;pointer-events:none}.hint-cap{fill:none;stroke:#ef4444;stroke-width:5;pointer-events:none}
+.coord{fill:#e8d3a8;font-size:15px;font-weight:700;text-anchor:middle;dominant-baseline:central}
+.pt{text-anchor:middle;dominant-baseline:central;font-weight:800;pointer-events:none}.pc{stroke-width:4;filter:drop-shadow(0 3px 3px #0007)}
+:is(.g-xq,.g-bq) .pc{fill:#fff1d0}:is(.g-xq,.g-bq) .pc.s0{stroke:#c0281c}:is(.g-xq,.g-bq) .pc.s1{stroke:#1a1a1a}
+:is(.g-xq,.g-bq) .pt.s0{fill:#c0281c}:is(.g-xq,.g-bq) .pt.s1{fill:#1a1a1a}
+.g-xq .bg{fill:#e8c27c;stroke:#6b4a22;stroke-width:3}.g-xq .gl{fill:none;stroke:#5a3a18;stroke-width:2}.g-xq .rv{font-size:30px;fill:#6b4a22;text-anchor:middle;dominant-baseline:central;opacity:.7;letter-spacing:6px}
+.g-bq .pc.down{fill:#7a4a22;stroke:#d8a95e}.g-bq .pc.down+.pt{fill:#f1d39a;font-size:34px}
+.g-go .wood{fill:#e3b66b}.g-go .gl{fill:none;stroke:#4a3320;stroke-width:1.6}.g-go .star{fill:#4a3320}
+.g-go .stn{filter:drop-shadow(0 3px 3px #0008)}.g-go .t1{fill:url(#gb)}.g-go .t2{fill:url(#gw);stroke:#999}.g-go .lm{fill:none;stroke-width:3}.g-go .lm.t1{stroke:#fff}.g-go .lm.t2{stroke:#111}
+.g-caro .paper{fill:#fbf6e6;stroke:#c9a25f;stroke-width:3}.g-caro .gl2{fill:none;stroke:#9bb3d4;stroke-width:1.5}
+.mx{stroke:#d6402f;stroke-width:5;stroke-linecap:round;fill:none}.mo{fill:none;stroke:#2563eb;stroke-width:5}
+.g-jg .jl{fill:#9ad985}.g-jg .jl.a{fill:#8bcf76}.g-jg .jw{fill:#4aa3e0}.g-jg .jt{fill:#e3b04b}.g-jg .jd{fill:#ee7b68}
+.g-jg .jx{font-size:30px;text-anchor:middle;dominant-baseline:central;opacity:.65;pointer-events:none}
+.g-jg .pc{fill:#fff}.g-jg .pc.s0{stroke:#2563eb;fill:#dbe9ff}.g-jg .pc.s1{stroke:#dc2626;fill:#ffe0dc}
+.g-cc .hole{fill:#d9b377;stroke:#a67c3d;stroke-width:1.5}.g-cc .hole.h0{fill:#bfd8ff}.g-cc .hole.h1{fill:#ffc6d0}
+.g-cc .mb{stroke-width:2.5;filter:drop-shadow(0 2px 2px #0008)}.g-cc .mb.s0{fill:#3b82f6;stroke:#1e3a8a}.g-cc .mb.s1{fill:#f43f5e;stroke:#881337}
+.g-db .paper{fill:#f8fafc;stroke:#94a3b8;stroke-width:3}.g-db .ee{stroke:#d3dbe8;stroke-width:4;stroke-dasharray:2 10;stroke-linecap:round}
+.g-db .ed{stroke-width:9;stroke-linecap:round}.g-db .ed.e1{stroke:#2563eb}.g-db .ed.e2{stroke:#dc2626}.g-db .bxo.b1{fill:#2563eb;opacity:.28}.g-db .bxo.b2{fill:#dc2626;opacity:.28}.g-db .dt{fill:#334155}.g-db .eh{fill:transparent}.g-db .eh:hover{fill:#64748b55}
+.g-ms .frame{fill:#475569;stroke:#94a3b8}.g-ms .mu{fill:#b9c6d8;stroke:#e9eff8;stroke-width:2}.g-ms .mr{fill:#eef2f7;stroke:#cbd5e1;stroke-width:2}.g-ms .ml{stroke:#f59e0b;stroke-width:4}
+.g-ms .mt{text-anchor:middle;dominant-baseline:central;font-weight:800;pointer-events:none}.n1{fill:#2563eb}.n2{fill:#16a34a}.n3{fill:#dc2626}.n4{fill:#1e3a8a}.n5{fill:#9f1239}.n6{fill:#0f766e}.n7{fill:#111}.n8{fill:#6b7280}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body>
+<header class="hd"><span>♞ Cờ Quán</span><button class="gh" id="th" title="Sáng / tối">🌓</button></header>
+<main id="home">
+<section class="pn st">
+<label>Đối thủ<select id="o"><option value="0">Người (2 người)<option value="1" selected>Máy (bot)</select></label>
+<label>Độ khó bot<select id="lv"><option value="1">Dễ<option value="2" selected>Vừa<option value="3">Khó</select></label>
+<label>Thời gian mỗi bên<select id="tm"><option value="0">Không giới hạn<option value="180">3 phút<option value="300">5 phút<option value="600">10 phút<option value="900">15 phút</select></label>
+<label>Xoay bàn theo lượt (2 người)<input type="checkbox" id="fl" checked></label>
+</section>
+<h2>Chơi một ván</h2><div class="cards" id="cards"></div>
+<h2>Giải đấu</h2><div class="tr"><button id="t3">🏆 Giải 3 ván</button><button id="t5">🏆 Giải 5 ván</button></div>
+
+</main>
+<section id="play" hidden>
+<div class="tbar"><button class="gh" id="mn">← Menu</button><span id="ti"></span><button class="gh" id="ru">Luật</button></div>
+<div id="sc"></div><div id="top"></div><div id="bd" class="bd"></div><div id="bot"></div><div id="st"></div>
+<div class="acts"><button id="ps" hidden>Bỏ lượt</button><button id="rs" class="gh">Đầu hàng</button></div>
+</section>
+<div id="ov" hidden></div>
+<script>
+const Games={},MATE=1e5,now=()=>performance.now(),$=s=>document.querySelector(s);
+const slideStyle=(o,l,i,px)=>{if(!o.anim||!l||l.t!==i||l.f==null||l.f===l.t)return'';const[a,b]=px(l.f),[c,d]=px(i);return` class="sl" style="--dx:${a-c}px;--dy:${b-d}px"`};
+function stdClick(G,S,ui,i){ui.promo=null;const ms=G.moves(S).filter(m=>m.f===ui.sel&&m.t===i);if(ms.length){ui.sel=null;if(ms.length>1){ui.promo=ms;return}return ms[0]}ui.sel=G.own(S,i)?i:null}
+const disc=(o,S,i,px,r,t,s,k='')=>{const[x,y]=px(i);return`<g${slideStyle(o,S.last,i,px)}><circle cx="${x}" cy="${y}" r="${r}" class="pc s${s} ${k}"/><text x="${x}" y="${y+1}" class="pt s${s}" font-size="${r*1.1}">${t}</text></g>`};
+const dot=(px,i,c,r=10)=>{const[x,y]=px(i);return`<circle cx="${x}" cy="${y}" r="${c?r*2.4:r}" class="${c?'hint-cap':'hint'}"/>`};
+const hit=(px,i,r)=>{const[x,y]=px(i);return`<circle cx="${x}" cy="${y}" r="${r}" fill="transparent" data-i="${i}"/>`};
+const mark=(px,S,ui,r)=>{let h='';const L=S.last;for(const i of L?[L.f,L.t]:[])if(i!=null){const[x,y]=px(i);h+=`<circle cx="${x}" cy="${y}" r="${r}" class="hl-last"/>`}if(ui.sel!=null){const[x,y]=px(ui.sel);h+=`<circle cx="${x}" cy="${y}" r="${r}" class="hl-sel"/>`}return h};
+const hints=(G,S,ui,px)=>ui.sel==null?'':G.moves(S).filter(m=>m.f===ui.sel).map(m=>dot(px,m.t,S.b[m.t])).join('');
+function nm(G,S,d,a,b){if(S.over)return S.over.w==null?0:-MATE-d;if(!d)return G.ev(S);let v=-1e9;for(const m of G.moves(S)){const x=-nm(G,G.play(S,m),d-1,-b,-a);if(x>v)v=x;if(v>a)a=v;if(a>=b)break}return v}
+function sbot(G,S,lv){let best=null,bv=-1e9;const d=[1,2,3][lv-1],nz=[40,8,0][lv-1];for(const m of G.moves(S)){const v=-nm(G,G.play(S,m),d-1,-1e9,1e9)+Math.random()*nz;if(v>bv){bv=v;best=m}}return best}
+
+/* ===== Cờ vua ===== */
+(() => {
+  const P = 1, N = 2, B = 3, R = 4, Q = 5, K = 6;
+  const GLY = { 1: '♟︎', 2: '♞', 3: '♝', 4: '♜', 5: '♛', 6: '♚' };
+  const ORTH = [[-1, 0], [1, 0], [0, -1], [0, 1]], DIAG = [[-1, -1], [-1, 1], [1, -1], [1, 1]];
+  const KNT = [], KGT = [], RAYS = [];
+  for (let i = 0; i < 64; i++) {
+    const r = i >> 3, c = i & 7; KNT[i] = []; KGT[i] = []; RAYS[i] = [];
+    for (const [dr, dc] of [[-2, -1], [-2, 1], [-1, -2], [-1, 2], [1, -2], [1, 2], [2, -1], [2, 1]]) {
+      const rr = r + dr, cc = c + dc; if (rr >= 0 && rr < 8 && cc >= 0 && cc < 8) KNT[i].push(rr * 8 + cc);
+    }
+    for (const [dr, dc] of ORTH.concat(DIAG)) {
+      const rr = r + dr, cc = c + dc; if (rr >= 0 && rr < 8 && cc >= 0 && cc < 8) KGT[i].push(rr * 8 + cc);
+      const ray = [];
+      for (let k = 1; ; k++) { const r2 = r + dr * k, c2 = c + dc * k; if (r2 < 0 || r2 > 7 || c2 < 0 || c2 > 7) break; ray.push(r2 * 8 + c2); }
+      RAYS[i].push(ray);
+    }
+  }
+
+  function attacked(b, sq, by) {
+    const r = sq >> 3, c = sq & 7;
+    const pr = by > 0 ? r + 1 : r - 1;
+    if (pr >= 0 && pr < 8) {
+      if (c > 0 && b[pr * 8 + c - 1] === by * P) return true;
+      if (c < 7 && b[pr * 8 + c + 1] === by * P) return true;
+    }
+    for (const t of KNT[sq]) if (b[t] === by * N) return true;
+    for (const t of KGT[sq]) if (b[t] === by * K) return true;
+    const rays = RAYS[sq];
+    for (let d = 0; d < 8; d++) {
+      const ray = rays[d];
+      for (let k = 0; k < ray.length; k++) {
+        const v = b[ray[k]];
+        if (v) { if (v * by > 0) { const a = v * by; if (a === Q || (d < 4 ? a === R : a === B)) return true; } break; }
+      }
+    }
+    return false;
+  }
+
+  function gen(pos, capOnly) {
+    const b = pos.b, s = pos.stm, out = [];
+    for (let i = 0; i < 64; i++) {
+      const v = b[i]; if (!v || v * s < 0) continue;
+      const a = v * s, r = i >> 3, c = i & 7;
+      if (a === P) {
+        const dir = s > 0 ? -1 : 1, r1 = r + dir, start = s > 0 ? 6 : 1, last = s > 0 ? 0 : 7;
+        if (r1 < 0 || r1 > 7) continue;
+        const f1 = r1 * 8 + c;
+        if (!b[f1]) {
+          if (r1 === last) { for (const pr of [Q, R, B, N]) out.push({ f: i, t: f1, pr, fl: 0 }); }
+          else if (!capOnly) {
+            out.push({ f: i, t: f1, pr: 0, fl: 0 });
+            if (r === start && !b[f1 + dir * 8]) out.push({ f: i, t: f1 + dir * 8, pr: 0, fl: 1 });
+          }
+        }
+        for (const dc of [-1, 1]) {
+          const cc = c + dc; if (cc < 0 || cc > 7) continue;
+          const t = r1 * 8 + cc;
+          if (b[t] && b[t] * s < 0) {
+            if (r1 === last) { for (const pr of [Q, R, B, N]) out.push({ f: i, t, pr, fl: 0 }); }
+            else out.push({ f: i, t, pr: 0, fl: 0 });
+          } else if (t === pos.ep) out.push({ f: i, t, pr: 0, fl: 2 });
+        }
+      } else if (a === N || a === K) {
+        for (const t of (a === N ? KNT[i] : KGT[i])) {
+          const w = b[t]; if (w * s > 0) continue; if (capOnly && !w) continue;
+          out.push({ f: i, t, pr: 0, fl: 0 });
+        }
+        if (a === K && !capOnly && i === (s > 0 ? 60 : 4)) {
+          const opp = -s;
+          if ((pos.cr & (s > 0 ? 1 : 4)) && b[i + 3] === s * R && !b[i + 1] && !b[i + 2] &&
+            !attacked(b, i, opp) && !attacked(b, i + 1, opp) && !attacked(b, i + 2, opp)) out.push({ f: i, t: i + 2, pr: 0, fl: 3 });
+          if ((pos.cr & (s > 0 ? 2 : 8)) && b[i - 4] === s * R && !b[i - 1] && !b[i - 2] && !b[i - 3] &&
+            !attacked(b, i, opp) && !attacked(b, i - 1, opp) && !attacked(b, i - 2, opp)) out.push({ f: i, t: i - 2, pr: 0, fl: 4 });
+        }
+      } else {
+        const d0 = a === B ? 4 : 0, d1 = a === R ? 4 : 8;
+        for (let d = d0; d < d1; d++) {
+          const ray = RAYS[i][d];
+          for (let k = 0; k < ray.length; k++) {
+            const t = ray[k], w = b[t];
+            if (w) { if (w * s < 0) out.push({ f: i, t, pr: 0, fl: 0 }); break; }
+            if (!capOnly) out.push({ f: i, t, pr: 0, fl: 0 });
+          }
+        }
+      }
+    }
+    return out;
+  }
+
+  function make(pos, m) {
+    const b = pos.b, p = b[m.f], s = pos.stm;
+    const u = { cr: pos.cr, ep: pos.ep, cp: b[m.t], p, wk: pos.wk, bk: pos.bk, cpi: -1 };
+    b[m.t] = m.pr ? s * m.pr : p; b[m.f] = 0;
+    if (m.fl === 2) { u.cpi = m.t + (s > 0 ? 8 : -8); u.cp = b[u.cpi]; b[u.cpi] = 0; }
+    else if (m.fl === 3) { b[m.f + 1] = b[m.f + 3]; b[m.f + 3] = 0; }
+    else if (m.fl === 4) { b[m.f - 1] = b[m.f - 4]; b[m.f - 4] = 0; }
+    if (Math.abs(p) === K) { if (s > 0) { pos.wk = m.t; pos.cr &= ~3; } else { pos.bk = m.t; pos.cr &= ~12; } }
+    if (m.f === 63 || m.t === 63) pos.cr &= ~1;
+    if (m.f === 56 || m.t === 56) pos.cr &= ~2;
+    if (m.f === 7 || m.t === 7) pos.cr &= ~4;
+    if (m.f === 0 || m.t === 0) pos.cr &= ~8;
+    pos.ep = m.fl === 1 ? (m.f + m.t) >> 1 : -1;
+    pos.stm = -s;
+    return u;
+  }
+  function unmake(pos, m, u) {
+    pos.stm = -pos.stm; const b = pos.b;
+    b[m.f] = u.p;
+    if (m.fl === 2) { b[m.t] = 0; b[u.cpi] = u.cp; } else b[m.t] = u.cp;
+    if (m.fl === 3) { b[m.f + 3] = b[m.f + 1]; b[m.f + 1] = 0; }
+    else if (m.fl === 4) { b[m.f - 4] = b[m.f - 1]; b[m.f - 1] = 0; }
+    pos.cr = u.cr; pos.ep = u.ep; pos.wk = u.wk; pos.bk = u.bk;
+  }
+  const inChk = pos => attacked(pos.b, pos.stm > 0 ? pos.wk : pos.bk, -pos.stm);
+  function legal(pos, capOnly) {
+    const ms = gen(pos, capOnly), out = [], s = pos.stm;
+    for (const m of ms) {
+      const u = make(pos, m);
+      if (!attacked(pos.b, s > 0 ? pos.wk : pos.bk, -s)) out.push(m);
+      unmake(pos, m, u);
+    }
+    return out;
+  }
+  function perft(pos, d) {
+    if (!d) return 1; let n = 0;
+    for (const m of legal(pos)) { const u = make(pos, m); n += perft(pos, d - 1); unmake(pos, m, u); }
+    return n;
+  }
+  const clone = p => ({ b: p.b.slice(), stm: p.stm, cr: p.cr, ep: p.ep, wk: p.wk, bk: p.bk });
+  function newPos() {
+    const b = new Int8Array(64), back = [R, N, B, Q, K, B, N, R];
+    for (let c = 0; c < 8; c++) { b[c] = -back[c]; b[8 + c] = -P; b[48 + c] = P; b[56 + c] = back[c]; }
+    return { b, stm: 1, cr: 15, ep: -1, wk: 60, bk: 4 };
+  }
+  function fromFEN(fen) {
+    const [pp, st, cs, ep] = fen.split(' '), b = new Int8Array(64), map = { p: P, n: N, b: B, r: R, q: Q, k: K };
+    let i = 0, wk = 0, bk = 0;
+    for (const ch of pp) {
+      if (ch === '/') continue;
+      if (/\d/.test(ch)) { i += +ch; continue; }
+      const t = map[ch.toLowerCase()], s = ch === ch.toUpperCase() ? 1 : -1;
+      b[i] = s * t; if (t === K) { if (s > 0) wk = i; else bk = i; } i++;
+    }
+    let cr = 0; if (cs.includes('K')) cr |= 1; if (cs.includes('Q')) cr |= 2; if (cs.includes('k')) cr |= 4; if (cs.includes('q')) cr |= 8;
+    const e = ep && ep !== '-' ? (8 - +ep[1]) * 8 + (ep.charCodeAt(0) - 97) : -1;
+    return { b, stm: st === 'w' ? 1 : -1, cr, ep: e, wk, bk };
+  }
+
+  /* --- đánh giá & tìm kiếm --- */
+  const PV = [0, 100, 320, 330, 500, 900, 0];
+  function evaluate(pos) {
+    const b = pos.b; let sc = 0, npm = 0, bw = 0, bb = 0;
+    for (let i = 0; i < 64; i++) { const v = b[i]; if (v) { const a = Math.abs(v); if (a > 1 && a < 6) npm += PV[a]; } }
+    for (let i = 0; i < 64; i++) {
+      const v = b[i]; if (!v) continue;
+      const a = Math.abs(v), sg = v > 0 ? 1 : -1, r = i >> 3, c = i & 7, rr = sg > 0 ? 7 - r : r;
+      const cen = 3 - Math.max(Math.abs(c - 3.5), Math.abs(r - 3.5)) + .5;
+      let x = PV[a];
+      if (a === P) x += rr * 7 + (c > 1 && c < 6 ? rr * 2 : 0) + (rr === 6 ? 40 : 0);
+      else if (a === N) x += cen * 11;
+      else if (a === B) { x += cen * 5; if (sg > 0) bw++; else bb++; }
+      else if (a === R) x += rr === 6 ? 22 : 0;
+      else if (a === Q) x += cen * 2;
+      else x += npm > 1600 ? (rr === 0 ? 18 : -rr * 8) + ((c < 3 || c > 5) && rr === 0 ? 14 : 0) : cen * 14;
+      sc += sg * x;
+    }
+    if (bw > 1) sc += 28; if (bb > 1) sc -= 28;
+    return pos.stm > 0 ? sc : -sc;
+  }
+  let nodes = 0, deadline = 0, abort = false;
+  function orderMoves(pos, ms, first) {
+    const b = pos.b;
+    for (const m of ms) {
+      const cp = Math.abs(b[m.t]) || (m.fl === 2 ? 1 : 0);
+      m.o = (cp ? 10 * PV[cp] - PV[Math.abs(b[m.f])] / 10 + 1000 : 0) + (m.pr ? PV[m.pr] + 800 : 0) + (first && m.f === first.f && m.t === first.t ? 1e6 : 0);
+    }
+    return ms.sort((x, y) => y.o - x.o);
+  }
+  function qs(pos, a, be, ply) {
+    const st = evaluate(pos); if (st >= be) return st; if (st > a) a = st;
+    if (ply > 7) return st;
+    const ms = orderMoves(pos, gen(pos, true)), s = pos.stm;
+    for (const m of ms) {
+      const u = make(pos, m);
+      if (attacked(pos.b, s > 0 ? pos.wk : pos.bk, -s)) { unmake(pos, m, u); continue; }
+      const v = -qs(pos, -be, -a, ply + 1); unmake(pos, m, u);
+      if (v >= be) return v; if (v > a) a = v;
+    }
+    return a;
+  }
+  function search(pos, d, a, be, ply) {
+    if ((++nodes & 1023) === 0 && now() > deadline) abort = true;
+    if (abort) return 0;
+    const chk = inChk(pos);
+    if (chk && ply < 10) d++;
+    if (d <= 0) return qs(pos, a, be, 0);
+    const ms = orderMoves(pos, gen(pos, false)); let n = 0, s = pos.stm;
+    for (const m of ms) {
+      const u = make(pos, m);
+      if (attacked(pos.b, s > 0 ? pos.wk : pos.bk, -s)) { unmake(pos, m, u); continue; }
+      n++;
+      const v = -search(pos, d - 1, -be, -a, ply + 1); unmake(pos, m, u);
+      if (abort) return 0;
+      if (v >= be) return v; if (v > a) a = v;
+    }
+    if (!n) return chk ? -MATE + ply : 0;
+    return a;
+  }
+  function bot(S, lv) {
+    const pos = clone(S.pos), ms = legal(pos);
+    if (ms.length <= 1) return ms[0];
+    const cfg = [{ d: 2, t: 400, noise: 110 }, { d: 3, t: 900, noise: 14 }, { d: 7, t: 2200, noise: 0 }][lv - 1];
+    nodes = 0; abort = false; deadline = now() + cfg.t;
+    let best = null, scores = null;
+    for (let d = 1; d <= cfg.d; d++) {
+      orderMoves(pos, ms, best);
+      let alpha = -Infinity, cur = null; const sc = [];
+      for (const m of ms) {
+        const u = make(pos, m);
+        const v = -search(pos, d - 1, -MATE * 2, cfg.noise ? MATE * 2 : -alpha, 1);
+        unmake(pos, m, u);
+        if (abort) break;
+        sc.push([m, v]); if (v > alpha) { alpha = v; cur = m; }
+      }
+      if (abort) { if (!best) best = cur || ms[0]; break; }
+      best = cur; scores = sc;
+      if (alpha > MATE - 100) break;
+    }
+    if (cfg.noise && scores) {
+      let bs = -Infinity, bm = best;
+      for (const [m, v] of scores) { const w = v + (Math.random() - .5) * 2 * cfg.noise; if (w > bs) { bs = w; bm = m; } }
+      return bm;
+    }
+    return best || ms[0];
+  }
+
+  /* --- trạng thái --- */
+  const key = pos => pos.b.join('') + pos.stm + pos.cr + pos.ep;
+  function insufficient(pos) {
+    const pcs = []; for (let i = 0; i < 64; i++) { const v = pos.b[i]; if (v && Math.abs(v) !== K) pcs.push([Math.abs(v), i]); }
+    if (!pcs.length) return true;
+    if (pcs.length === 1) return pcs[0][0] === N || pcs[0][0] === B;
+    if (pcs.every(x => x[0] === B)) { const col = pcs.map(x => ((x[1] >> 3) + (x[1] & 7)) & 1); return col.every(x => x === col[0]); }
+    return false;
+  }
+  function finish(S, mover) {
+    const pos = S.pos, ms = legal(pos), chk = inChk(pos);
+    S._ms = ms; S.chk = chk;
+    if (!ms.length) S.over = chk ? { w: mover, why: 'Chiếu bí!' } : { w: null, why: 'Hết nước đi (hòa cờ)' };
+    else if (S.hm >= 100) S.over = { w: null, why: 'Hòa: 50 nước không bắt quân/đi tốt' };
+    else if (S.keys.filter(k => k === S.keys[S.keys.length - 1]).length >= 3) S.over = { w: null, why: 'Hòa: lặp lại thế cờ 3 lần' };
+    else if (insufficient(pos)) S.over = { w: null, why: 'Hòa: không đủ quân chiếu bí' };
+    return S;
+  }
+
+  const G = Games.chess = {
+    id: 'chess', name: 'Cờ vua', ico: '♞', color: '#3b6ea5', tag: 'Kinh điển · 8×8',
+    desc: 'Chiếu bí vua đối phương. Có nhập thành, bắt tốt qua đường, phong cấp.',
+    sides: ['Trắng', 'Đen'], cols: ['#f6f1e4', '#242424'], ar: 1,
+    rules: ['Mỗi bên 16 quân; Trắng đi trước. Chiếu bí Vua đối phương để thắng.', 'Có đủ nhập thành, bắt tốt qua đường và phong cấp (chọn quân khi tốt tới cuối bàn).', 'Hòa khi hết nước đi mà không bị chiếu, lặp thế 3 lần, 50 nước không bắt quân hoặc không đủ quân chiếu bí.'],
+    init() { const pos = newPos(); const S = { pos, turn: 0, hm: 0, keys: [key(pos)], over: null, last: null, cap: [[], []], chk: false }; S._ms = legal(pos); return S; },
+    moves(S) { return S._ms || (S._ms = legal(clone(S.pos))); },
+    own(S, i) { const v = S.pos.b[i]; return v * S.pos.stm > 0; },
+    click: (S, ui, i) => stdClick(G, S, ui, i),
+    play(S, m) {
+      const pos = clone(S.pos), mover = S.turn, mv = S.pos.b[m.f];
+      const cp = pos.b[m.t] || (m.fl === 2 ? -pos.stm * P : 0);
+      make(pos, m);
+      const N2 = { pos, turn: 1 - S.turn, hm: (Math.abs(mv) === P || cp) ? 0 : S.hm + 1, last: { f: m.f, t: m.t }, cap: S.cap.map(a => a.slice()), over: null };
+      if (cp) N2.cap[mover].push(Math.abs(cp));
+      N2.keys = S.keys.concat(key(pos));
+      return finish(N2, mover);
+    },
+    bot,
+    status(S) { return S.chk ? 'Chiếu! ' : ''; },
+    info(S, side) {
+      const c = S.cap[side].slice().sort((a, b) => b - a), mine = c.reduce((x, t) => x + PV[t], 0), oth = S.cap[1 - side].reduce((x, t) => x + PV[t], 0);
+      return c.map(t => GLY[t]).join('') + (mine > oth ? ` +${Math.round((mine - oth) / 100)}` : '');
+    },
+    view(S, ui, o) {
+      const CS = 80, M = 36, W = CS * 8 + M * 2, flip = o.flip, b = S.pos.b;
+      const px = i => { let r = i >> 3, c = i & 7; if (flip) { r = 7 - r; c = 7 - c; } return [M + c * CS + CS / 2, M + r * CS + CS / 2]; };
+      const hints = new Map(); if (ui.sel != null) for (const m of G.moves(S)) if (m.f === ui.sel) hints.set(m.t, 1);
+      const kingSq = S.chk ? (S.pos.stm > 0 ? S.pos.wk : S.pos.bk) : -1;
+      let sq = '', hl = '', pcs = '', ht = '', hit = '', lab = '';
+      for (let i = 0; i < 64; i++) {
+        let r = i >> 3, c = i & 7; const rr = flip ? 7 - r : r, cc = flip ? 7 - c : c, x = M + cc * CS, y = M + rr * CS;
+        sq += `<rect x="${x}" y="${y}" width="${CS}" height="${CS}" class="${(r + c) & 1 ? 'sqd' : 'sql'}"/>`;
+        if (S.last && (S.last.f === i || S.last.t === i)) hl += `<rect x="${x}" y="${y}" width="${CS}" height="${CS}" class="hl-last"/>`;
+        if (ui.sel === i) hl += `<rect x="${x}" y="${y}" width="${CS}" height="${CS}" class="hl-sel"/>`;
+        if (i === kingSq) hl += `<circle cx="${x + CS / 2}" cy="${y + CS / 2}" r="${CS * .52}" class="hl-chk"/>`;
+        const v = b[i];
+        if (v) {
+          const [cx, cy] = px(i), side = v > 0 ? 0 : 1;
+          const ss = slideStyle(o, S.last, i, px);
+          pcs += `<g${ss || ''}><text x="${cx}" y="${cy + 3}" class="gp s${side}" font-size="66">${GLY[Math.abs(v)]}</text></g>`;
+        }
+        if (hints.has(i)) { const [cx, cy] = px(i); ht += v || (S.pos.ep === i && ui.sel != null && Math.abs(b[ui.sel]) === P) ? `<circle cx="${cx}" cy="${cy}" r="${CS * .45}" class="hint-cap"/>` : `<circle cx="${cx}" cy="${cy}" r="${CS * .17}" class="hint"/>`; }
+        hit += `<rect x="${x}" y="${y}" width="${CS}" height="${CS}" fill="transparent" data-i="${i}"/>`;
+      }
+      for (let k = 0; k < 8; k++) {
+        const fc = flip ? 7 - k : k, fr = flip ? k + 1 : 8 - k;
+        lab += `<text x="${M + k * CS + CS / 2}" y="${W - 12}" class="coord">${'abcdefgh'[fc]}</text><text x="14" y="${M + k * CS + CS / 2 + 1}" class="coord">${fr}</text>`;
+      }
+      return { w: W, h: W, svg: `<rect x="2" y="2" width="${W - 4}" height="${W - 4}" rx="14" class="frame"/>${sq}${hl}${lab}${pcs}${ht}${hit}` };
+    },
+    _t: { perft, fromFEN, newPos, legal }
+  };
+})();
+
+
+/* ===== Cờ tướng ===== */
+Games.xq=(()=>{const KN=[[-2,-1],[-2,1],[2,-1],[2,1],[-1,-2],[-1,2],[1,-2],[1,2]],O=[[1,0],[-1,0],[0,1],[0,-1]],D=[[1,1],[1,-1],[-1,1],[-1,-1]],GL={1:'帥將',2:'仕士',3:'相象',4:'傌馬',5:'俥車',6:'炮砲',7:'兵卒'},V=[0,0,200,200,400,900,450,100],sg=t=>t?-1:1;
+const mg=(b,s)=>{const o=[];for(let i=0;i<90;i++){const v=b[i];if(!v||v*s<0)continue;const t=Math.abs(v),r=i/9|0,c=i%9,f=s>0?-1:1;
+const A=(rr,cc)=>{if(rr<0||rr>9||cc<0||cc>8)return 1;const q=b[rr*9+cc];if(q*s<=0)o.push({f:i,t:rr*9+cc});return q},pal=(rr,cc)=>cc>2&&cc<6&&(s>0?rr>6:rr<3),ob=(rr,cc)=>rr<0||rr>9||cc<0||cc>8;
+if(t==1){for(const[d,e]of O)if(pal(r+d,c+e))A(r+d,c+e);for(let k=1;r+f*k>=0&&r+f*k<10;k++){const q=b[(r+f*k)*9+c];if(q){if(q===-s)o.push({f:i,t:(r+f*k)*9+c});break}}}
+else if(t==2){for(const[d,e]of D)if(pal(r+d,c+e))A(r+d,c+e)}
+else if(t==3){for(const[d,e]of D){const rr=r+2*d,cc=c+2*e;if(!ob(rr,cc)&&(s>0?rr>4:rr<5)&&!b[(r+d)*9+c+e])A(rr,cc)}}
+else if(t==4){for(const[d,e]of KN)if(!b[(r+(Math.abs(d)==2?d/2:0))*9+c+(Math.abs(e)==2?e/2:0)])A(r+d,c+e)}
+else if(t==5){for(const[d,e]of O)for(let k=1;k<10;k++)if(A(r+d*k,c+e*k))break}
+else if(t==6){for(const[d,e]of O){let k=1;for(;!ob(r+d*k,c+e*k)&&!b[(r+d*k)*9+c+e*k];k++)o.push({f:i,t:(r+d*k)*9+c+e*k});for(k++;!ob(r+d*k,c+e*k);k++){const q=b[(r+d*k)*9+c+e*k];if(q){if(q*s<0)o.push({f:i,t:(r+d*k)*9+c+e*k});break}}}}
+else{A(r+f,c);if(s>0?r<5:r>4){A(r,c-1);A(r,c+1)}}}return o};
+const G={id:'xq',name:'Cờ tướng',ico:'帥',color:'#c0392b',tag:'Truyền thống · 9×10',desc:'Ăn Tướng đối phương. Pháo nhảy ăn, Mã bị cản chân, Tượng không qua sông.',sides:['Đỏ','Đen'],cols:['#d6402f','#26262b'],
+rules:['Đỏ đi trước. Ăn được Tướng đối phương là thắng (không cần tuyên bố chiếu).','Tướng, Sĩ ở trong cung; Tượng không qua sông; Mã bị cản chân; Pháo ăn bằng cách nhảy qua đúng 1 quân.','Tốt qua sông được đi ngang. Hai Tướng không được đối mặt nhau trên cùng một cột nếu không có quân chắn.'],
+init(){const b=new Int8Array(90),k=[5,4,3,2,1,2,3,4,5];for(let c=0;c<9;c++){b[c]=-k[c];b[81+c]=k[c]}[1,7].forEach(c=>{b[18+c]=-6;b[63+c]=6});[0,2,4,6,8].forEach(c=>{b[27+c]=-7;b[54+c]=7});return{b,turn:0,last:null,over:null,cap:[[],[]]}},
+moves:S=>mg(S.b,sg(S.turn)),own:(S,i)=>S.b[i]*sg(S.turn)>0,click:(S,ui,i)=>stdClick(G,S,ui,i),
+play(S,m){const b=S.b.slice(),q=b[m.t],s=S.turn,cap=S.cap.map(a=>a.slice());if(q)cap[s].push(Math.abs(q));b[m.t]=b[m.f];b[m.f]=0;const N={b,turn:1-s,last:{f:m.f,t:m.t},over:null,cap};if(Math.abs(q)==1)N.over={w:s,why:'Ăn được Tướng!'};else if(!mg(b,sg(N.turn)).length)N.over={w:s,why:'Đối phương hết nước đi'};return N},
+ev(S){let v=0;for(let i=0;i<90;i++){const p=S.b[i];if(!p)continue;const t=Math.abs(p),r=i/9|0,s=p>0?1:-1;let x=V[t];if(t==7&&(s>0?r<5:r>4))x=200+(s>0?5-r:r-4)*8;if(t==4||t==6)x+=(4-Math.abs(i%9-4))*4;v+=s*x}return S.turn?-v:v},
+bot:(S,lv)=>sbot(G,S,lv),info:(S,side)=>S.cap[side].map(t=>GL[t][1-side]).join(''),
+view(S,ui,o){const CS=66,M=46,W=8*CS+2*M,H=9*CS+2*M,px=i=>{let r=i/9|0,c=i%9;if(o.flip){r=9-r;c=8-c}return[M+c*CS,M+r*CS]};let g='',s='';
+for(let r=0;r<10;r++)g+=`M${M} ${M+r*CS}H${M+8*CS}`;
+for(let c=0;c<9;c++)g+=c%8?`M${M+c*CS} ${M}V${M+4*CS}M${M+c*CS} ${M+5*CS}V${M+9*CS}`:`M${M+c*CS} ${M}V${M+9*CS}`;
+for(const y of[0,7])g+=`M${M+3*CS} ${M+y*CS}l${2*CS} ${2*CS}M${M+5*CS} ${M+y*CS}l${-2*CS} ${2*CS}`;
+s+=`<text x="${M+2*CS}" y="${M+4.5*CS}" class="rv">楚河</text><text x="${M+6*CS}" y="${M+4.5*CS}" class="rv">漢界</text>`+mark(px,S,ui,31);
+for(let i=0;i<90;i++){const v=S.b[i];if(v)s+=disc(o,S,i,px,29,GL[Math.abs(v)][v>0?0:1],v>0?0:1)}
+s+=hints(G,S,ui,px);for(let i=0;i<90;i++)s+=hit(px,i,CS/2);
+return{w:W,h:H,svg:`<rect x="2" y="2" width="${W-4}" height="${H-4}" rx="14" class="bg"/><path d="${g}" class="gl"/>${s}`}}};return G})();
+
+/* ===== Cờ vây 9×9 ===== */
+Games.go=(()=>{const gn=i=>{const r=i/9|0,c=i%9,n=[];if(r)n.push(i-9);if(r<8)n.push(i+9);if(c)n.push(i-1);if(c<8)n.push(i+1);return n};
+const grp=(b,i)=>{const col=b[i],g=[i],seen=new Set(g),lib=new Set;for(let k=0;k<g.length;k++)for(const y of gn(g[k])){if(!b[y])lib.add(y);else if(b[y]===col&&!seen.has(y)){seen.add(y);g.push(y)}}return{g,lib:lib.size}};
+const put=(b,i,col)=>{if(b[i])return null;const nb=b.slice();nb[i]=col;let cap=0;for(const y of gn(i))if(nb[y]&&nb[y]!==col){const g=grp(nb,y);if(!g.lib){for(const z of g.g)nb[z]=0;cap+=g.g.length}}return grp(nb,i).lib?{b:nb,cap}:null};
+const lg=(S,i)=>{const r=put(S.b,i,S.turn+1);return r&&!S.keys.includes(r.b.join(''))?r:null};
+const area=b=>{const sc=[0,0,0],seen=new Uint8Array(81);for(let i=0;i<81;i++){if(b[i])sc[b[i]]++;else if(!seen[i]){const st=[i],n=[i],bd=new Set;seen[i]=1;while(st.length){const x=st.pop();for(const y of gn(x)){if(b[y])bd.add(b[y]);else if(!seen[y]){seen[y]=1;st.push(y);n.push(y)}}}if(bd.size==1)sc[[...bd][0]]+=n.length}}return sc};
+const G={id:'go',name:'Cờ vây',ico:'⚫',color:'#334155',tag:'Chiến lược · 9×9',desc:'Đặt quân vây đất, bắt quân đối phương. Ai chiếm nhiều điểm hơn thì thắng.',sides:['Đen','Trắng'],cols:['#111','#f4f4f4'],noflip:1,pass:1,
+rules:['Đen đi trước, lần lượt đặt quân lên giao điểm. Quân hết "khí" (không còn ô trống liền kề) sẽ bị bắt.','Không được tự sát và không được lặp lại thế cờ cũ (luật Ko).','Hai bên liên tiếp bỏ lượt thì ván kết thúc. Tính điểm theo vùng: quân trên bàn + đất vây kín, Trắng được cộng komi 6,5.','Hãy bắt hết quân chết trước khi bỏ lượt vì máy không tự gỡ quân chết.'],
+init:()=>({b:new Int8Array(81),turn:0,keys:['0'.repeat(81)],pass:0,caps:[0,0],n:0,last:null,over:null}),
+moves(S){const o=[];for(let i=0;i<81;i++)if(!S.b[i]&&lg(S,i))o.push({f:null,t:i});o.push({pass:1,f:null,t:-1});return o},
+own:()=>0,click:(S,ui,i)=>S.b[i]||!lg(S,i)?0:{f:null,t:i},
+play(S,m){const s=S.turn,N={b:S.b,turn:1-s,keys:S.keys,pass:m.pass?S.pass+1:0,caps:S.caps.slice(),last:null,over:null,n:S.n+1};if(!m.pass){const r=lg(S,m.t);N.b=r.b;N.caps[s]+=r.cap;N.keys=S.keys.concat(r.b.join(''));N.last={f:null,t:m.t}}
+if(N.pass>=2||N.n>=170){const a=area(N.b),w=a[2]+6.5;N.over={w:a[1]>w?0:1,why:`Đen ${a[1]} – Trắng ${w} (komi 6,5)`}}return N},
+bot(S,lv){const s=S.turn+1,o=3-s,b=S.b,nz=[7,2.5,.7][lv-1];let best=null,bv=-9;
+for(let i=0;i<81;i++){if(b[i])continue;const r=lg(S,i);if(!r)continue;const ns=gn(i);if(!r.cap&&ns.every(y=>b[y]===s))continue;let v=r.cap*10+Math.min(grp(r.b,i).lib,4);
+for(const y of ns){if(b[y]===s&&grp(b,y).lib===1&&grp(r.b,i).lib>1)v+=7;if(b[y]===o&&r.b[y]&&grp(r.b,y).lib===1)v+=3}
+const e=Math.min(i/9|0,i%9,8-(i/9|0),8-i%9);v+=[-3,1,1.5,1.5,1.5][e]+(ns.some(y=>b[y])?1:0)+Math.random()*nz;if(v>bv){bv=v;best={f:null,t:i}}}
+const a=area(b),lead=a[s]-a[o]+(s==2?6.5:-6.5)>0;return!best||bv<0||S.n>150||(S.pass&&lead)?{pass:1,f:null,t:-1}:best},
+status:S=>S.pass?'Đối thủ vừa bỏ lượt! ':'',info:(S,side)=>`bắt ${S.caps[side]}`,
+view(S,ui,o){const CS=66,M=48,W=8*CS+2*M,px=i=>[M+i%9*CS,M+(i/9|0)*CS];let g='',s='';
+for(let k=0;k<9;k++)g+=`M${M} ${M+k*CS}H${M+8*CS}M${M+k*CS} ${M}V${M+8*CS}`;
+for(const[r,c]of[[2,2],[2,6],[6,2],[6,6],[4,4]]){const[x,y]=px(r*9+c);s+=`<circle cx="${x}" cy="${y}" r="5.5" class="star"/>`}
+for(let i=0;i<81;i++){const v=S.b[i],[x,y]=px(i),l=S.last&&S.last.t===i;if(v)s+=`<circle cx="${x}" cy="${y}" r="30" class="stn t${v}${o.anim&&l?' pp':''}"/>`+(l?`<circle cx="${x}" cy="${y}" r="9" class="lm t${v}"/>`:'');s+=hit(px,i,CS/2)}
+return{w:W,h:W,svg:`<defs><radialGradient id="gb" cx=".35" cy=".3"><stop offset="0" stop-color="#777"/><stop offset="1" stop-color="#050505"/></radialGradient><radialGradient id="gw" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#c9c9c9"/></radialGradient></defs><rect x="2" y="2" width="${W-4}" height="${W-4}" rx="16" class="wood"/><path d="${g}" class="gl"/>${s}`}}};return G})();
+
+/* ===== Cờ caro (5 quân liền) 15×15 ===== */
+Games.caro=(()=>{const DIRS=[[0,1],[1,0],[1,1],[1,-1]],ln=(b,i,c,dr,dc)=>{const r=i/15|0,k=i%15;let n=1,e=0;for(const s of[1,-1]){let y=r+dr*s,x=k+dc*s;while(y>=0&&y<15&&x>=0&&x<15&&b[y*15+x]===c){n++;y+=dr*s;x+=dc*s}if(y>=0&&y<15&&x>=0&&x<15&&!b[y*15+x])e++}return[n,e]};
+const SC=(n,e)=>n>=5?1e5:e?[0,1,10,100,1e3][n]*(e==2?10:1):0,pv=(b,i,c)=>DIRS.reduce((a,[d,e])=>{const[n,k]=ln(b,i,c,d,e);return a+SC(n,k)},0);
+const G={id:'caro',name:'Cờ caro',ico:'✕',color:'#2563eb',tag:'Nhanh · 15×15',desc:'Ai xếp được 5 quân liền nhau (ngang, dọc, chéo) trước thì thắng.',sides:['X','O'],cols:['#d6402f','#2563eb'],noflip:1,
+rules:['X đi trước, hai bên luân phiên đánh vào một ô trống.','Ai tạo được hàng 5 quân liền nhau theo hàng ngang, dọc hoặc chéo trước là thắng.','Bàn đầy mà chưa ai đủ 5 quân thì hòa.'],
+init:()=>({b:new Int8Array(225),turn:0,cnt:0,last:null,over:null}),moves(S){const o=[];for(let i=0;i<225;i++)if(!S.b[i])o.push({f:null,t:i});return o},own:()=>0,click:(S,ui,i)=>S.b[i]?0:{f:null,t:i},
+play(S,m){const b=S.b.slice(),c=S.turn+1;b[m.t]=c;const N={b,turn:1-S.turn,last:{f:null,t:m.t},cnt:S.cnt+1,over:null};if(DIRS.some(([d,e])=>ln(b,m.t,c,d,e)[0]>=5))N.over={w:S.turn,why:'Đủ 5 quân liền nhau!'};else if(N.cnt>=225)N.over={w:null,why:'Bàn đầy – hòa'};return N},
+bot(S,lv){const b=S.b,c=S.turn+1,o=3-c,nz=[2e3,200,0][lv-1];if(!S.cnt)return{f:null,t:112};let best=null,bv=-1;
+for(let i=0;i<225;i++){if(b[i])continue;const r=i/15|0,k=i%15;let near=0;for(let y=Math.max(0,r-2);y<=Math.min(14,r+2);y++)for(let x=Math.max(0,k-2);x<=Math.min(14,k+2);x++)if(b[y*15+x])near=1;if(!near)continue;const v=pv(b,i,c)*1.1+pv(b,i,o)+Math.random()*nz;if(v>bv){bv=v;best={f:null,t:i}}}return best||{f:null,t:112}},
+info:(S,side)=>side?'◯':'✕',
+view(S,ui,o){const CS=42,M=30,W=15*CS+2*M,px=i=>[M+i%15*CS+CS/2,M+(i/15|0)*CS+CS/2];let g='',s='';for(let k=0;k<=15;k++)g+=`M${M} ${M+k*CS}H${M+15*CS}M${M+k*CS} ${M}V${M+15*CS}`;
+for(let i=0;i<225;i++){const v=S.b[i],[x,y]=px(i),l=S.last&&S.last.t===i,a=o.anim&&l?' pp':'';if(l)s+=`<rect x="${x-CS/2}" y="${y-CS/2}" width="${CS}" height="${CS}" class="hl-last"/>`;
+if(v==1)s+=`<path class="mx${a}" d="M${x-12} ${y-12}L${x+12} ${y+12}M${x+12} ${y-12}L${x-12} ${y+12}"/>`;else if(v==2)s+=`<circle class="mo${a}" cx="${x}" cy="${y}" r="13"/>`;
+s+=`<rect x="${x-CS/2}" y="${y-CS/2}" width="${CS}" height="${CS}" fill="transparent" data-i="${i}"/>`}
+return{w:W,h:W,svg:`<rect x="2" y="2" width="${W-4}" height="${W-4}" rx="14" class="paper"/><path d="${g}" class="gl2"/>${s}`}}};return G})();
+
+/* ===== Cờ úp (cờ tướng lật quân) 4×8 ===== */
+Games.bq=(()=>{const GL={1:'兵卒',2:'炮砲',3:'傌馬',4:'俥車',5:'相象',6:'仕士',7:'帥將'},VL=[0,10,45,30,45,45,55,100],can=(a,t)=>a!=2&&(a==1?t==1||t==7:a==7?t!=1:a>=t),DR=[[1,0],[-1,0],[0,1],[0,-1]];
+const mg=(S,s)=>{const b=S.b,cl=S.cl[s],o=[];for(let i=0;i<32;i++){const v=b[i];if(!v)continue;if(!(v&16)){o.push({f:i,t:i,flip:1});continue}if(cl==null||(v>>3&1)!==cl)continue;const t=v&7,r=i>>3,c=i&7;
+for(const[d,e]of DR){const rr=r+d,cc=c+e;if(rr>=0&&rr<4&&cc>=0&&cc<8){const q=b[rr*8+cc];if(!q||(t!=2&&q&16&&(q>>3&1)!==cl&&can(t,q&7)))o.push({f:i,t:rr*8+cc})}
+if(t==2){let sc=0;for(let k=1;;k++){const y=r+d*k,x=c+e*k;if(y<0||y>3||x<0||x>7)break;const q=b[y*8+x];if(!q)continue;if(!sc){sc=1;continue}if(!(q&16&&(q>>3&1)===cl))o.push({f:i,t:y*8+x});break}}}}return o};
+const G={id:'bq',name:'Cờ úp',ico:'❖',color:'#a16207',tag:'May rủi · 4×8',desc:'Cờ tướng lật quân: 32 quân úp xuống, lật để biết màu rồi ăn hết quân đối phương.',sides:['Bên 1','Bên 2'],cols:['#b45309','#44403c'],
+rules:['32 quân úp ngẫu nhiên. Mỗi lượt: lật 1 quân úp, hoặc đi 1 quân của mình sang ô kề (trống hoặc ăn).','Quân lật đầu tiên quyết định màu của người lật; đối thủ nhận màu còn lại.','Thứ bậc: Tướng > Sĩ > Tượng > Xe > Mã > Pháo > Tốt. Tốt ăn được Tướng, Tướng không ăn được Tốt. Pháo ăn bằng cách nhảy qua đúng 1 quân (kể cả quân úp).','Thắng khi đối phương hết nước đi. 40 nước không ăn quân thì hòa.'],
+init(){const a=[];for(let c=0;c<2;c++)for(const[t,n]of[[7,1],[6,2],[5,2],[4,2],[3,2],[2,2],[1,5]])for(let k=0;k<n;k++)a.push(t|c<<3);a.sort(()=>Math.random()-.5);return{b:Int8Array.from(a),cl:[null,null],turn:0,hm:0,cap:[[],[]],last:null,over:null}},
+moves:S=>mg(S,S.turn),own:(S,i)=>{const v=S.b[i];return v&16&&(v>>3&1)===S.cl[S.turn]},
+click(S,ui,i){const ms=G.moves(S);let m=ui.sel!=null&&ms.find(x=>x.f===ui.sel&&x.t===i&&!x.flip);if(!m)m=ms.find(x=>x.flip&&x.f===i);if(m){ui.sel=null;return m}ui.sel=G.own(S,i)?i:null},
+play(S,m){const b=S.b.slice(),s=S.turn,cl=S.cl.slice(),cap=S.cap.map(a=>a.slice());let hm=S.hm+1;
+if(m.flip){b[m.f]|=16;if(cl[s]==null){const c=b[m.f]>>3&1;cl[s]=c;cl[1-s]=1-c}hm=0}else{const q=b[m.t];if(q){hm=0;cap[s].push(q&7)}b[m.t]=b[m.f];b[m.f]=0}
+const N={b,cl,turn:1-s,hm,cap,last:m.flip?{f:null,t:m.f}:{f:m.f,t:m.t},over:null};if(!mg(N,N.turn).length)N.over={w:s,why:'Đối phương hết nước đi'};else if(hm>=40)N.over={w:null,why:'Hòa: 40 nước không ăn quân'};return N},
+bot(S,lv){const s=S.turn,nz=[30,10,2][lv-1];let best=null,bv=-1e9;for(const m of mg(S,s)){const N=G.play(S,m);let v=Math.random()*nz,th=0;
+if(m.flip)v+=8;else{const q=S.b[m.t];if(q)v+=q&16?VL[q&7]:40}
+if(N.over)v+=1e4*(N.over.w===s);else for(const x of mg(N,1-s)){if(x.flip)continue;const q=N.b[x.t];if(q&16&&(q>>3&1)===N.cl[s])th=Math.max(th,VL[q&7])}
+v-=th*.9;if(v>bv){bv=v;best=m}}return best},
+status:S=>S.cl[0]==null?'Hãy lật một quân úp. ':'',info:(S,side)=>S.cl[side]==null?'':(S.cl[side]?'Đen ':'Đỏ ')+S.cap[side].map(t=>GL[t][1-S.cl[side]]).join(''),
+view(S,ui,o){const CS=92,M=34,W=8*CS+2*M,H=4*CS+2*M,px=i=>{let r=i>>3,c=i&7;if(o.flip){r=3-r;c=7-c}return[M+c*CS+CS/2,M+r*CS+CS/2]};let s='';
+for(let i=0;i<32;i++){const[x,y]=px(i);s+=`<rect x="${x-CS/2}" y="${y-CS/2}" width="${CS}" height="${CS}" class="${(i+(i>>3))&1?'sqd':'sql'}"/>`}
+s+=mark(px,S,ui,42);for(let i=0;i<32;i++){const v=S.b[i];if(!v)continue;const c=v>>3&1;s+=v&16?disc(o,S,i,px,37,GL[v&7][c],c):disc(o,S,i,px,37,'❖',0,'down')}
+s+=hints(G,S,ui,px);for(let i=0;i<32;i++)s+=hit(px,i,CS/2);return{w:W,h:H,svg:`<rect x="2" y="2" width="${W-4}" height="${H-4}" rx="14" class="frame"/>${s}`}}};return G})();
+
+/* ===== Cờ thú (Đấu thú) 7×9 ===== */
+Games.jg=(()=>{const GL=['','🐭','🐱','🐶','🐺','🐆','🐯','🦁','🐘'],VL=[0,30,20,30,40,50,70,80,90],den=[59,3],wt=i=>{const r=i/7|0,c=i%7;return r>2&&r<6&&c%3!=0},tr=i=>i==58||i==60||i==52?0:i==2||i==4||i==10?1:-1,er=(i,v)=>tr(i)==(v>0?1:0)?0:Math.abs(v);
+const mg=(b,s)=>{const o=[],sg=s?-1:1;for(let i=0;i<63;i++){const v=b[i];if(!v||v*sg<0)continue;const t=Math.abs(v),r=i/7|0,c=i%7;
+for(const[d,e]of[[1,0],[-1,0],[0,1],[0,-1]]){let rr=r+d,cc=c+e;if(rr<0||rr>8||cc<0||cc>6)continue;let j=rr*7+cc;
+if(wt(j)&&t!=1){if(t<6)continue;while(wt(j)&&!b[j]){rr+=d;cc+=e;if(rr<0||rr>8||cc<0||cc>6){j=-1;break}j=rr*7+cc}if(j<0||wt(j))continue}
+if(j==den[s])continue;const q=b[j];if(q){if(q*sg>0||wt(i)!==wt(j))continue;const a=er(i,v),x=er(j,q),u=Math.abs(q);if(!(t==1&&u==8||a>=x&&!(t==8&&u==1)))continue}o.push({f:i,t:j})}}return o};
+const G={id:'jg',name:'Cờ thú',ico:'🐘',color:'#16a34a',tag:'Đấu thú · 7×9',desc:'Voi, sư tử, hổ, báo… Chiếm hang đối phương hoặc ăn hết quân để thắng.',sides:['Xanh','Đỏ'],cols:['#2563eb','#dc2626'],
+rules:['Xanh đi trước. Mỗi lượt đi 1 ô ngang hoặc dọc. Mạnh yếu: Voi 8 > Sư tử > Hổ > Báo > Sói > Chó > Mèo > Chuột 1.','Chuột ăn được Voi, Voi không ăn được Chuột. Chỉ Chuột được lội xuống sông; Sư tử và Hổ nhảy qua sông nếu không có chuột chắn.','Quân lọt vào bẫy của đối phương mất sức mạnh (ai cũng ăn được). Không được vào hang nhà mình.','Vào hang đối phương, ăn hết quân, hoặc làm đối phương hết nước đi là thắng.'],
+init(){const b=new Int8Array(63);for(const[r,c,t]of[[8,0,7],[8,6,6],[7,1,3],[7,5,2],[6,0,1],[6,2,5],[6,4,4],[6,6,8]]){b[r*7+c]=t;b[(8-r)*7+6-c]=-t}return{b,turn:0,last:null,over:null,n:0}},
+moves:S=>mg(S.b,S.turn),own:(S,i)=>S.b[i]*(S.turn?-1:1)>0,click:(S,ui,i)=>stdClick(G,S,ui,i),
+play(S,m){const b=S.b.slice(),s=S.turn;b[m.t]=b[m.f];b[m.f]=0;const N={b,turn:1-s,last:{f:m.f,t:m.t},over:null,n:S.n+1};
+N.over=m.t==den[1-s]?{w:s,why:'Vào hang đối phương!'}:!b.some(x=>x*(s?1:-1)>0)?{w:s,why:'Ăn hết quân đối phương!'}:!mg(b,1-s).length?{w:s,why:'Đối phương hết nước đi'}:N.n>=200?{w:null,why:'Hòa: quá 200 nước'}:null;return N},
+ev(S){let v=0;for(let i=0;i<63;i++){const p=S.b[i];if(!p)continue;const s=p>0?1:-1,r=i/7|0;let x=VL[Math.abs(p)]+(s>0?8-r:r)*4;if(Math.abs(i-den[s>0?1:0])<=8&&Math.abs((i%7)-3)<=1&&(s>0?r<3:r>5))x+=60;v+=s*x}return S.turn?-v:v},
+bot:(S,lv)=>sbot(G,S,lv),info:(S,side)=>S.b.filter(x=>x&&(x>0)===(side==0)).length+' quân',
+view(S,ui,o){const CS=82,M=30,W=7*CS+2*M,H=9*CS+2*M,px=i=>{let r=i/7|0,c=i%7;if(o.flip){r=8-r;c=6-c}return[M+c*CS+CS/2,M+r*CS+CS/2]};let s='';
+for(let i=0;i<63;i++){const[x,y]=px(i),k=wt(i)?'jw':tr(i)>=0?'jt':i==59||i==3?'jd':'jl'+((i+(i/7|0))&1?' a':'');s+=`<rect x="${x-CS/2}" y="${y-CS/2}" width="${CS}" height="${CS}" class="${k}"/>`;if(tr(i)>=0||i==3||i==59)s+=`<text x="${x}" y="${y}" class="jx">${i==3||i==59?'🏠':'✖'}</text>`}
+s+=mark(px,S,ui,40);for(let i=0;i<63;i++){const v=S.b[i];if(v)s+=disc(o,S,i,px,34,GL[Math.abs(v)],v>0?0:1)}s+=hints(G,S,ui,px);for(let i=0;i<63;i++)s+=hit(px,i,CS/2);
+return{w:W,h:H,svg:`<rect x="2" y="2" width="${W-4}" height="${H-4}" rx="14" class="frame"/>${s}`}}};return G})();
+
+/* ===== Cờ nhảy (Chinese checkers, 2 người) ===== */
+Games.cc=(()=>{const CK=[],ID=new Map,DR=[[1,0],[-1,0],[0,1],[0,-1],[1,-1],[-1,1]];
+for(let y=-8;y<=8;y++)for(let x=-8;x<=8;x++){const z=-x-y;if(Math.min(x,y,z)>=-4||Math.max(x,y,z)<=4){ID.set(x+','+y,CK.length);CK.push([x,y,z])}}
+const NB=CK.map(([x,y])=>DR.map(([a,b])=>{const k=ID.get((x+a)+','+(y+b));return k===undefined?-1:k})),T0=CK.map((c,i)=>c[1]>=5?i:-1).filter(i=>i>=0),T1=CK.map((c,i)=>c[1]<=-5?i:-1).filter(i=>i>=0),GO=[T1,T0],GS=GO.map(a=>new Set(a)),H0=new Set(T0),H1=new Set(T1);
+const mg=(b,s)=>{const o=[];for(let i=0;i<121;i++){if(b[i]!==s+1)continue;for(const j of NB[i])if(j>=0&&!b[j])o.push({f:i,t:j});const q=[i],vis=new Set(q);
+while(q.length){const c=q.pop();for(let d=0;d<6;d++){const m=NB[c][d];if(m<0||!b[m]||m===i)continue;const l=NB[m][d];if(l>=0&&(!b[l]||l===i)&&!vis.has(l)){vis.add(l);q.push(l);if(l!==i)o.push({f:i,t:l})}}}}return o};
+const G={id:'cc',name:'Cờ nhảy',ico:'✦',color:'#db2777',tag:'Bàn sao · 2 người',desc:'Đưa 10 quân sang góc đối diện bằng cách bước hoặc nhảy qua quân khác (nhảy liên hoàn).',sides:['Xanh','Hồng'],cols:['#3b82f6','#f43f5e'],
+rules:['Mỗi bên 10 quân ở một đầu của ngôi sao, mục tiêu là đưa hết sang góc đối diện.','Mỗi lượt: bước 1 ô sang ô trống kề bên, hoặc nhảy qua 1 quân (của ai cũng được) vào ô trống ngay sau nó; có thể nhảy liên tiếp nhiều lần.','Thắng khi lấp đầy góc đích. Quá 300 nước thì bên có nhiều quân về đích hơn thắng.'],
+init(){const b=new Int8Array(121);T0.forEach(i=>b[i]=1);T1.forEach(i=>b[i]=2);return{b,turn:0,last:null,over:null,n:0}},
+moves:S=>mg(S.b,S.turn),own:(S,i)=>S.b[i]===S.turn+1,click:(S,ui,i)=>stdClick(G,S,ui,i),
+play(S,m){const b=S.b.slice(),s=S.turn;b[m.t]=b[m.f];b[m.f]=0;const N={b,turn:1-s,last:{f:m.f,t:m.t},n:S.n+1,over:null},g=GO[s];
+if(g.every(i=>b[i])&&g.some(i=>b[i]===s+1))N.over={w:s,why:'Đưa toàn bộ quân về đích!'};else if(N.n>=300){const c=k=>GO[k].filter(i=>b[i]===k+1).length,a=c(0),d=c(1);N.over={w:a>d?0:d>a?1:null,why:`Hết 300 nước – về đích ${a}–${d}`}}return N},
+bot(S,lv){const s=S.turn,nz=[5,1.5,.3][lv-1],p=y=>s?y:-y;let best=null,bv=-1e9;for(const m of mg(S.b,s)){const fy=p(CK[m.f][1]),ty=p(CK[m.t][1]);
+const v=ty-fy+(8-fy)*.12+(GS[s].has(m.t)?3:0)-(GS[s].has(m.f)&&!GS[s].has(m.t)?9:0)+Math.random()*nz;if(v>bv){bv=v;best=m}}return best},
+info:(S,side)=>GO[side].filter(i=>S.b[i]===side+1).length+'/10 về đích',
+view(S,ui,o){const sz=27,f=o.flip?-1:1,px=i=>{const[x,y]=CK[i];return[310+f*sz*1.732*(x+y/2),350+f*sz*1.5*y]};let s='';
+CK.forEach((c,i)=>{const[x,y]=px(i);s+=`<circle cx="${x}" cy="${y}" r="13" class="hole${H0.has(i)?' h0':H1.has(i)?' h1':''}"/>`});s+=mark(px,S,ui,18);
+for(let i=0;i<121;i++){const v=S.b[i];if(v){const[x,y]=px(i);s+=`<g${slideStyle(o,S.last,i,px)}><circle cx="${x}" cy="${y}" r="14" class="mb s${v-1}"/></g>`}}
+s+=hints(G,S,ui,px);for(let i=0;i<121;i++)s+=hit(px,i,14);return{w:620,h:700,svg:`<rect x="2" y="2" width="616" height="696" rx="22" class="frame"/>${s}`}}};return G})();
+
+/* ===== Nối ô vuông (Dots & Boxes) 5×5 ===== */
+Games.db=(()=>{const N=5,HE=N*(N+1),bE=(r,c)=>[r*N+c,(r+1)*N+c,HE+r*(N+1)+c,HE+r*(N+1)+c+1];
+const adj=e=>{const o=[];if(e<HE){const r=e/N|0,c=e%N;if(r)o.push((r-1)*N+c);if(r<N)o.push(r*N+c)}else{const k=e-HE,r=k/(N+1)|0,c=k%(N+1);if(c)o.push(r*N+c-1);if(c<N)o.push(r*N+c)}return o};
+const sd=(e,b)=>bE(b/N|0,b%N).filter(x=>e[x]).length,full=e=>{let n=0;for(let b=0;b<N*N;b++)if(sd(e,b)==4)n++;return n};
+const chain=e=>{e=e.slice();const a=full(e);for(let ok=1;ok;){ok=0;for(let b=0;b<N*N;b++)if(sd(e,b)==3){e[bE(b/N|0,b%N).find(x=>!e[x])]=1;ok=1}}return full(e)-a};
+const G={id:'db',name:'Dots & Boxes',ico:'▣',color:'#0d9488',tag:'Nối điểm · 5×5',desc:'Nối hai chấm kề nhau. Đóng kín được ô vuông thì ghi điểm và được đi tiếp.',sides:['Xanh','Đỏ'],cols:['#2563eb','#dc2626'],noflip:1,
+rules:['Mỗi lượt nối 1 đoạn thẳng giữa hai chấm kề nhau (ngang hoặc dọc).','Ai nối đoạn thứ 4 khép kín một ô vuông thì chiếm ô đó, được 1 điểm và được đi tiếp.','Tránh nối đoạn thứ 3 của một ô vì đối thủ sẽ chiếm ngay. Hết ô thì ai chiếm nhiều ô hơn là thắng (25 ô, không có hòa).'],
+init:()=>({e:new Uint8Array(2*HE),bx:new Uint8Array(N*N),sc:[0,0],turn:0,extra:false,last:null,over:null}),
+moves(S){const o=[];S.e.forEach((v,i)=>{if(!v)o.push({f:null,t:i})});return o},own:()=>0,click:(S,ui,i)=>S.e[i]?0:{f:null,t:i},
+play(S,m){const e=S.e.slice(),bx=S.bx.slice(),sc=S.sc.slice(),s=S.turn;e[m.t]=s+1;let g=0;for(const b of adj(m.t))if(!bx[b]&&sd(e,b)==4){bx[b]=s+1;g++}sc[s]+=g;
+return{e,bx,sc,turn:g?s:1-s,extra:g>0,last:{f:null,t:m.t},over:sc[0]+sc[1]>=N*N?{w:sc[0]>sc[1]?0:1,why:`Chung cuộc ${sc[0]} – ${sc[1]} ô`}:null}},
+bot(S,lv){const mv=G.moves(S).map(m=>m.t),pk=a=>({f:null,t:a[Math.random()*a.length|0]});if(lv==1&&Math.random()<.4)return pk(mv);
+const tk=mv.filter(e=>adj(e).some(b=>sd(S.e,b)==3));if(tk.length)return pk(tk);const sf=mv.filter(e=>adj(e).every(b=>sd(S.e,b)<2));if(sf.length)return pk(sf);if(lv<3)return pk(mv);
+let best=[],bv=1e9;for(const e of mv){const t=S.e.slice();t[e]=1;const v=chain(t);if(v<bv){bv=v;best=[e]}else if(v==bv)best.push(e)}return pk(best)},
+status:S=>S.extra?'Vừa chiếm ô, đi tiếp! ':'',info:(S,side)=>`${S.sc[side]} ô`,
+view(S,ui,o){const CS=92,M=46,W=N*CS+2*M,P=(r,c)=>[M+c*CS,M+r*CS];let s='',d='',h='';
+for(let b=0;b<N*N;b++)if(S.bx[b]){const[x,y]=P(b/N|0,b%N);s+=`<rect x="${x+7}" y="${y+7}" width="${CS-14}" height="${CS-14}" rx="10" class="bxo b${S.bx[b]}"/>`}
+for(let e=0;e<2*HE;e++){const v=S.e[e],hz=e<HE,k=hz?e:e-HE,r=hz?k/N|0:k/(N+1)|0,c=hz?k%N:k%(N+1),[x,y]=P(r,c);
+s+=`<line x1="${x}" y1="${y}" x2="${hz?x+CS:x}" y2="${hz?y:y+CS}" class="${v?'ed e'+v+(o.anim&&S.last&&S.last.t===e?' pp':''):'ee'}"/>`;
+if(!v)h+=`<rect x="${hz?x+14:x-18}" y="${hz?y-18:y+14}" width="${hz?CS-28:36}" height="${hz?36:CS-28}" rx="10" class="eh" data-i="${e}"/>`}
+for(let r=0;r<=N;r++)for(let c=0;c<=N;c++){const[x,y]=P(r,c);d+=`<circle cx="${x}" cy="${y}" r="9" class="dt"/>`}
+return{w:W,h:W,svg:`<rect x="2" y="2" width="${W-4}" height="${W-4}" rx="18" class="paper"/>${s}${d}${h}`}}};return G})();
+
+/* ===== Dò mìn đối kháng 9×9 ===== */
+Games.ms=(()=>{const NN=81,MC=10,nb=i=>{const r=i/9|0,c=i%9,o=[];for(let a=-1;a<=1;a++)for(let b=-1;b<=1;b++){if(!a&&!b)continue;const y=r+a,x=c+b;if(y>=0&&y<9&&x>=0&&x<9)o.push(y*9+x)}return o},num=(m,i)=>nb(i).reduce((a,j)=>a+m[j],0);
+const G={id:'ms',name:'Dò mìn',ico:'💣',color:'#475569',tag:'Đối kháng · 9×9',desc:'Hai người thay phiên mở ô trên cùng một bàn. Trúng mìn là thua, mở nhiều ô an toàn hơn thì thắng.',sides:['Xanh','Đỏ'],cols:['#2563eb','#dc2626'],noflip:1,
+rules:['Bàn 9×9 có 10 mìn. Hai bên thay phiên mở một ô; số trên ô cho biết có bao nhiêu mìn ở 8 ô xung quanh.','Nước đầu tiên luôn an toàn. Mở ô số 0 sẽ tự mở lan ra, người mở được cộng điểm cho tất cả ô vừa mở.','Ai trúng mìn thì thua ngay. Nếu mở hết 71 ô an toàn mà chưa ai trúng, bên có nhiều ô hơn thắng.'],
+init:()=>({m:null,r:new Uint8Array(NN),cnt:[0,0],turn:0,last:null,over:null}),
+moves(S){const o=[];for(let i=0;i<NN;i++)if(!S.r[i])o.push({f:null,t:i});return o},own:()=>0,click:(S,ui,i)=>S.r[i]?0:{f:null,t:i},
+play(S,m){const s=S.turn,r=S.r.slice(),cnt=S.cnt.slice();let mines=S.m;if(!mines){mines=new Uint8Array(NN);const ban=new Set([m.t,...nb(m.t)]);for(let k=0;k<MC;){const x=Math.random()*NN|0;if(!mines[x]&&!ban.has(x)){mines[x]=1;k++}}}
+const N={m:mines,r,cnt,turn:1-s,last:{f:null,t:m.t},over:null};if(mines[m.t]){r[m.t]=1;N.over={w:1-s,why:`Bên ${G.sides[s]} trúng mìn!`};return N}
+const st=[m.t];let got=0;r[m.t]=1;while(st.length){const x=st.pop();got++;if(!num(mines,x))for(const y of nb(x))if(!r[y]&&!mines[y]){r[y]=1;st.push(y)}}
+cnt[s]+=got;if(cnt[0]+cnt[1]>=NN-MC)N.over={w:cnt[0]>cnt[1]?0:1,why:`Mở hết ô an toàn: ${cnt[0]} – ${cnt[1]}`};return N},
+bot(S,lv){const r=S.r,m=S.m,u=[];for(let i=0;i<NN;i++)if(!r[i])u.push(i);const pk=a=>({f:null,t:a[Math.random()*a.length|0]});if(!m)return{f:null,t:40};if(lv==1&&Math.random()<.6)return pk(u);
+const K=new Set,F=new Set;for(let ch=1;ch;){ch=0;for(let i=0;i<NN;i++){if(!r[i])continue;const n=num(m,i),un=nb(i).filter(j=>!r[j]&&!K.has(j)),mk=nb(i).filter(j=>K.has(j)).length;if(!un.length)continue;
+if(n===mk){for(const j of un)if(!F.has(j)){F.add(j);ch=1}}else if(n-mk===un.length){for(const j of un){K.add(j);ch=1}}}}
+const sf=u.filter(i=>F.has(i));if(sf.length)return pk(sf);const c=u.filter(i=>!K.has(i));if(!c.length)return pk(u);if(lv==2)return pk(c);
+const p0=(MC-K.size)/c.length;let best=c[0],bv=9;for(const i of c){let p=-1;for(const j of nb(i))if(r[j]){const un=nb(j).filter(k=>!r[k]&&!K.has(k)).length;p=Math.max(p,(num(m,j)-nb(j).filter(k=>K.has(k)).length)/un)}if(p<0)p=p0;p+=Math.random()*.01;if(p<bv){bv=p;best=i}}return{f:null,t:best}},
+info:(S,side)=>`${S.cnt[side]} ô`,
+view(S,ui,o){const CS=66,M=26,W=9*CS+2*M,px=i=>[M+i%9*CS+CS/2,M+(i/9|0)*CS+CS/2];let s='';
+for(let i=0;i<NN;i++){const[x,y]=px(i),v=S.r[i],mn=S.m&&S.m[i],l=S.last&&S.last.t===i;s+=`<rect x="${x-CS/2+2}" y="${y-CS/2+2}" width="${CS-4}" height="${CS-4}" rx="7" class="${v?'mr':'mu'}${l?' ml':''}"/>`;
+if(v){if(mn)s+=`<text x="${x}" y="${y+2}" class="mt" font-size="34">💥</text>`;else{const n=num(S.m,i);if(n)s+=`<text x="${x}" y="${y+2}" class="mt n${n}${o.anim&&l?' pp':''}" font-size="34">${n}</text>`}}
+else{if(S.over&&mn)s+=`<text x="${x}" y="${y+2}" class="mt" font-size="30" opacity=".75">💣</text>`;s+=`<rect x="${x-CS/2}" y="${y-CS/2}" width="${CS}" height="${CS}" fill="transparent" data-i="${i}"/>`}}
+return{w:W,h:W,svg:`<rect x="2" y="2" width="${W-4}" height="${W-4}" rx="16" class="frame"/>${s}`}}};return G})();
+
+/* ===== Giao diện, bot, giải đấu ===== */
+const LIST=[Games.chess,Games.xq,Games.go,Games.caro,Games.bq,Games.jg,Games.cc,Games.db,Games.ms];
+let R=null,TR=null;
+$('#cards').innerHTML=LIST.map((G,k)=>`<button class="card" style="--c:${G.color}" data-k="${k}"><span class="ico">${G.ico}</span><b>${G.name}</b><small>${G.tag}</small><p>${G.desc}</p></button>`).join('');
+const pn=p=>R.vb?(p?'Máy':'Bạn'):'Người '+(p+1),fm=s=>R.T0?`${Math.max(0,s)/60|0}:${String(Math.floor(Math.max(0,s)%60)).padStart(2,'0')}`:'∞',isBot=()=>R&&R.vb&&R.seat[R.S.turn]===1&&!R.S.over;
+const show=k=>{$('#home').hidden=k!='home';$('#play').hidden=k!='play'},ov=h=>{$('#ov').innerHTML=`<div class="pn">${h}</div>`;$('#ov').hidden=0};
+function openGame(G,seat){const T=+$('#tm').value;R={G,S:G.init(),ui:{sel:null},vb:+$('#o').value,lv:+$('#lv').value,T0:T,flo:$('#fl').checked,seat,tm:[T,T],anim:0,tick:Date.now()};show('play');draw();botGo()}
+function toMenu(){R=null;TR=null;show('home')}
+function draw(){const{G,S,ui}=R,flip=!G.noflip&&(R.vb?R.seat[1]===0:R.flo&&S.turn===1&&!S.over),v=G.view(S,ui,{flip,anim:R.anim});R.anim=0;
+$('#bd').style.setProperty('--ar',v.w/v.h);$('#bd').innerHTML=`<svg class="g-${G.id}" viewBox="0 0 ${v.w} ${v.h}">${v.svg}</svg>`+(ui.promo?`<div id="pr">${ui.promo.map((m,k)=>`<button data-k="${k}">${['','','♞','♝','♜','♛'][m.pr]}</button>`).join('')}</div>`:'');
+const bar=s=>`<div class="bar${S.turn===s&&!S.over?' on':''}"><i style="background:${G.cols[s]}"></i><b>${pn(R.seat[s])}</b><span class="sd">${G.sides[s]}</span><em>${G.info?G.info(S,s)||'':''}</em><span class="clk" id="c${s}">${fm(R.tm[s])}</span></div>`;
+$('#top').innerHTML=bar(flip?0:1);$('#bot').innerHTML=bar(flip?1:0);$('#ti').textContent=G.ico+' '+G.name;
+$('#sc').textContent=TR?`Ván ${TR.i+1}/${TR.n} · Bạn ${TR.sc[0]} – ${TR.sc[1]} ${R.vb?'Máy':'Người 2'}`:'';
+$('#st').textContent=S.over?S.over.why:(G.status?G.status(S):'')+'Lượt '+pn(R.seat[S.turn])+(isBot()?' (đang nghĩ…)':'');$('#ps').hidden=!(G.pass&&!S.over&&!isBot());$('#rs').hidden=!!S.over}
+function doMove(m){const r=R;r.ui={sel:null};r.S=r.G.play(r.S,m);r.anim=1;draw();if(r.S.over)return endGame();botGo()}
+function botGo(){if(!isBot())return;const r=R;setTimeout(()=>{if(R!==r||r.S.over)return;const m=r.G.bot(r.S,r.lv);if(m)doMove(m)},450)}
+function endGame(){const{G,S}=R,o=S.over,ps=o.w==null?null:R.seat[o.w];draw();let h=`<h2>${G.ico} ${G.name}</h2><h1>${ps==null?'Hòa!':pn(ps)+' thắng!'}</h1><p>${o.why}</p>`;
+if(TR){if(ps==null){TR.sc[0]+=.5;TR.sc[1]+=.5}else TR.sc[ps]++;TR.log.push([G.name,ps]);const last=TR.i+1>=TR.n,[a,b]=TR.sc;h+=`<p class="big">${pn(0)} ${a} – ${b} ${pn(1)}</p>`;
+if(last)h+=`<h2>${a==b?'Hòa chung cuộc':'🏆 '+pn(a>b?0:1)+' vô địch!'}</h2><table>${TR.log.map(([n,p])=>`<tr><td>${n}</td><td>${p==null?'Hòa':pn(p)+' thắng'}</td></tr>`).join('')}</table><button data-a="menu">Về menu</button>`;else h+=`<button data-a="next">Ván tiếp: ${TR.list[TR.i+1].name} ▶</button>`}
+else h+=`<button data-a="again">Chơi lại</button><button class="gh" data-a="menu">Menu</button>`;ov(h)}
+function tour(n){TR={n,list:LIST.slice().sort(()=>Math.random()-.5).slice(0,n),i:0,sc:[0,0],log:[]};openGame(TR.list[0],[0,1])}
+$('#cards').onclick=e=>{const b=e.target.closest('[data-k]');if(b){TR=null;openGame(LIST[+b.dataset.k],[0,1])}};
+$('#t3').onclick=()=>tour(3);$('#t5').onclick=()=>tour(5);$('#mn').onclick=toMenu;
+$('#bd').onclick=e=>{if(!R||R.S.over||isBot())return;const p=e.target.closest('[data-k]');if(p&&R.ui.promo)return doMove(R.ui.promo[+p.dataset.k]);const t=e.target.closest('[data-i]');if(!t)return;const m=R.G.click(R.S,R.ui,+t.dataset.i);m?doMove(m):draw()};
+$('#ps').onclick=()=>{if(R&&!isBot()&&!R.S.over)doMove(R.G.moves(R.S).find(m=>m.pass))};
+$('#rs').onclick=()=>{if(R&&!isBot()&&!R.S.over){R.S.over={w:1-R.S.turn,why:pn(R.seat[R.S.turn])+' đầu hàng'};endGame()}};
+$('#ru').onclick=()=>ov(`<h2>${R.G.ico} ${R.G.name}</h2><ul>${R.G.rules.map(r=>`<li>${r}</li>`).join('')}</ul><button data-a="x">Đóng</button>`);
+$('#ov').onclick=e=>{const a=e.target.dataset.a;if(!a)return;$('#ov').hidden=1;if(a=='again')openGame(R.G,R.seat);if(a=='menu')toMenu();if(a=='next'){TR.i++;openGame(TR.list[TR.i],TR.i%2?[1,0]:[0,1])}};
+$('#th').onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark'};
+setInterval(()=>{if(!R)return;const n=Date.now(),d=(n-R.tick)/1000;R.tick=n;if(!R.T0||R.S.over||$('#play').hidden)return;const s=R.S.turn;R.tm[s]-=d;const e=$('#c'+s);if(e)e.textContent=fm(R.tm[s]);if(R.tm[s]<=0){R.S.over={w:1-s,why:'Hết giờ'};endGame()}},250);
+
+/* ===== ADD-ON Cờ Quán: Nối ô nhiều bản đồ · Dò mìn cắm cờ · kiểu bàn & màu quân · luật cờ tướng =====
+   CÁCH DÙNG: dán nguyên khối này vào cuối file, ngay phía trên thẻ đóng của <script> cuối cùng. ===== */
+try{document.head.insertAdjacentHTML('beforeend',`<style>
+.frame{fill:var(--fr,#3b2a1c);stroke:var(--fs,#c9a25f)}.sql{fill:var(--sq1,#f0d9b5)}.sqd{fill:var(--sq2,#b58863)}
+.gp.s0{fill:var(--cw,#fff);stroke:var(--cws,#222)}.gp.s1{fill:var(--cb,#1b1b1f);stroke:var(--cbs,#f3e9d0)}
+:is(.g-xq,.g-bq) .pc{fill:var(--xd,#fff1d0)}:is(.g-xq,.g-bq) .pc.s0{stroke:var(--x0,#c0281c)}:is(.g-xq,.g-bq) .pc.s1{stroke:var(--x1,#1a1a1a)}
+:is(.g-xq,.g-bq) .pt.s0{fill:var(--x0,#c0281c)}:is(.g-xq,.g-bq) .pt.s1{fill:var(--x1,#1a1a1a)}
+.g-xq .bg{fill:var(--xb,#e8c27c);stroke:var(--xs,#6b4a22)}.g-xq .gl{stroke:var(--xs,#5a3a18)}.g-xq .rv{fill:var(--xs,#6b4a22)}
+.g-go .wood{fill:var(--wd,#e3b66b)}.g-db .paper{fill:#e2e8f0}.g-db .ee{stroke:#a5b1c4}.g-db .cell{fill:#fff}
+button.gh.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border-color:transparent}
+.bd{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;touch-action:manipulation}</style>`);
+$('.st').insertAdjacentHTML('beforeend','<label>Kiểu bàn<select id="bt"></select></label><label>Quân cờ vua<select id="cp"></select></label><label>Quân cờ tướng<select id="xp"></select></label><label>Bản đồ Nối ô<select id="dm"></select></label>');
+$('.acts').insertAdjacentHTML('afterbegin','<button id="fg" class="gh" hidden>🚩 Cắm cờ</button>')}catch(e){console.error(e)}
+/* ===== Nối ô vuông (Dots & Boxes) – nhiều cỡ & bản đồ ===== */
+Games.db=(()=>{const sq=(h,w)=>Array(h).fill('#'.repeat(w)),
+MAPS=[['Cổ điển 5×5',sq(5,5)],['Vuông 7×7',sq(7,7)],['Vuông 10×10',sq(10,10)],['Chữ nhật 6×12',sq(6,12)],
+['Chữ thập 9×9',['...###...','...###...','...###...','#########','#########','#########','...###...','...###...','...###...']],
+['Kim cương 9×9',['....#....','...###...','..#####..','.#######.','#########','.#######.','..#####..','...###...','....#....']],
+['Vòng 9×9',['#########','#########','#########','###...###','###...###','###...###','#########','#########','#########']],
+['Bốn trụ 9×9',['#########','#########','##.###.##','#########','#########','#########','##.###.##','#########','#########']],
+['Trái tim 9×8',['.##...##.','#########','#########','#########','.#######.','..#####..','...###...','....#....']],
+['Tam giác 10',Array.from({length:10},(_,i)=>'#'.repeat(i+1)+'.'.repeat(9-i))]],cache={};
+const mk=k=>cache[k]||(()=>{const[name,rows]=MAPS[k],h=rows.length,w=rows[0].length,bx=new Uint8Array(w*h);rows.forEach((s,r)=>[...s].forEach((ch,c)=>{if(ch=='#')bx[r*w+c]=1}));
+const HE=(h+1)*w,TE=HE+h*(w+1),ex=new Uint8Array(TE),ad=[],bE=[],has=(r,c)=>r>=0&&r<h&&c>=0&&c<w&&bx[r*w+c];
+for(let r=0;r<=h;r++)for(let c=0;c<w;c++){const e=r*w+c,a=[];if(has(r-1,c))a.push((r-1)*w+c);if(has(r,c))a.push(r*w+c);ex[e]=a.length?1:0;ad[e]=a}
+for(let r=0;r<h;r++)for(let c=0;c<=w;c++){const e=HE+r*(w+1)+c,a=[];if(has(r,c-1))a.push(r*w+c-1);if(has(r,c))a.push(r*w+c);ex[e]=a.length?1:0;ad[e]=a}
+for(let r=0;r<h;r++)for(let c=0;c<w;c++)bE[r*w+c]=[r*w+c,(r+1)*w+c,HE+r*(w+1)+c,HE+r*(w+1)+c+1];
+return cache[k]={name,w,h,bx,HE,TE,ex,ad,bE,nb:bx.reduce((a,b)=>a+b,0)}})();
+const sd=(M,e,b)=>{const a=M.bE[b];return(e[a[0]]>0)+(e[a[1]]>0)+(e[a[2]]>0)+(e[a[3]]>0)},full=(M,e)=>{let n=0;for(let b=0;b<M.bx.length;b++)if(M.bx[b]&&sd(M,e,b)==4)n++;return n};
+const chain=(M,e)=>{e=e.slice();const a=full(M,e);for(let ok=1;ok;){ok=0;for(let b=0;b<M.bx.length;b++)if(M.bx[b]&&sd(M,e,b)==3){e[M.bE[b].find(x=>!e[x])]=1;ok=1}}return full(M,e)-a};
+const G={id:'db',name:'Dots & Boxes',ico:'▣',color:'#0d9488',tag:'Nối điểm · nhiều bản đồ',desc:'Nối hai chấm kề nhau, đóng kín ô vuông thì ghi điểm. Bàn lớn đến 10×10 và nhiều hình đặc biệt.',sides:['Xanh','Đỏ'],cols:['#2563eb','#dc2626'],noflip:1,maps:MAPS.map(a=>a[0]),sub:S=>S.mp.name,
+rules:['Mỗi lượt nối 1 đoạn thẳng giữa hai chấm kề nhau (ngang hoặc dọc).','Ai nối đoạn thứ 4 khép kín một ô vuông thì chiếm ô đó, được 1 điểm và được đi tiếp.','Chọn bản đồ ở menu: bàn vuông đến 10×10, chữ nhật 6×12 hoặc hình đặc biệt (chữ thập, kim cương, vòng, trái tim, tam giác…) có phần “lỗ” không có ô.','Tránh nối đoạn thứ 3 của một ô vì đối thủ sẽ chiếm ngay. Hết ô thì ai chiếm nhiều ô hơn là thắng, bằng nhau thì hòa.'],
+init(){const M=mk(+$('#dm').value||0);return{mp:M,e:new Uint8Array(M.TE),bx:new Uint8Array(M.w*M.h),sc:[0,0],turn:0,extra:false,last:null,over:null}},
+moves(S){const o=[];for(let i=0;i<S.mp.TE;i++)if(S.mp.ex[i]&&!S.e[i])o.push({f:null,t:i});return o},own:()=>0,click:(S,ui,i)=>S.e[i]?0:{f:null,t:i},
+play(S,m){const M=S.mp,e=S.e.slice(),bx=S.bx.slice(),sc=S.sc.slice(),s=S.turn;e[m.t]=s+1;let g=0;for(const b of M.ad[m.t])if(!bx[b]&&sd(M,e,b)==4){bx[b]=s+1;g++}sc[s]+=g;const tie=sc[0]==sc[1];
+return{mp:M,e,bx,sc,turn:g?s:1-s,extra:g>0,last:{f:null,t:m.t},over:sc[0]+sc[1]>=M.nb?{w:tie?null:sc[0]>sc[1]?0:1,why:(tie?'Hòa ':'Chung cuộc ')+sc[0]+' – '+sc[1]+' ô'}:null}},
+bot(S,lv){const M=S.mp,mv=G.moves(S).map(m=>m.t),pk=a=>({f:null,t:a[Math.random()*a.length|0]});if(lv==1&&Math.random()<.4)return pk(mv);
+const tk=mv.filter(e=>M.ad[e].some(b=>sd(M,S.e,b)==3));if(tk.length)return pk(tk);const sf=mv.filter(e=>M.ad[e].every(b=>sd(M,S.e,b)<2));if(sf.length)return pk(sf);if(lv<3)return pk(mv);
+let best=[],bv=1e9;for(const e of mv){const t=S.e.slice();t[e]=1;const v=chain(M,t);if(v<bv){bv=v;best=[e]}else if(v==bv)best.push(e)}return pk(best)},
+status:S=>S.extra?'Vừa chiếm ô, đi tiếp! ':'',info:(S,side)=>`${S.sc[side]} ô`,
+view(S,ui,o){const M=S.mp,{w,h,HE}=M,CS=Math.min(92,Math.floor(840/Math.max(w,h))),Mg=46,W=w*CS+2*Mg,H=h*CS+2*Mg,P=(r,c)=>[Mg+c*CS,Mg+r*CS],used=new Uint8Array((w+1)*(h+1)),ds=(r,c)=>used[r*(w+1)+c]=1;let s='',d='',hh='';
+for(let b=0;b<w*h;b++)if(M.bx[b]){const[x,y]=P(b/w|0,b%w),v=S.bx[b];s+=`<rect x="${x+3}" y="${y+3}" width="${CS-6}" height="${CS-6}" rx="8" class="cell"/>`+(v?`<rect x="${x+7}" y="${y+7}" width="${CS-14}" height="${CS-14}" rx="10" class="bxo b${v}"/>`:'')}
+for(let e=0;e<M.TE;e++){if(!M.ex[e])continue;const v=S.e[e],hz=e<HE,k=hz?e:e-HE,r=hz?k/w|0:k/(w+1)|0,c=hz?k%w:k%(w+1),[x,y]=P(r,c);hz?(ds(r,c),ds(r,c+1)):(ds(r,c),ds(r+1,c));
+s+=`<line x1="${x}" y1="${y}" x2="${hz?x+CS:x}" y2="${hz?y:y+CS}" class="${v?'ed e'+v+(o.anim&&S.last&&S.last.t===e?' pp':''):'ee'}"/>`;
+if(!v)hh+=`<rect x="${hz?x+CS*.15:x-CS*.2}" y="${hz?y-CS*.2:y+CS*.15}" width="${hz?CS*.7:CS*.4}" height="${hz?CS*.4:CS*.7}" rx="10" class="eh" data-i="${e}"/>`}
+for(let r=0;r<=h;r++)for(let c=0;c<=w;c++)if(used[r*(w+1)+c]){const[x,y]=P(r,c);d+=`<circle cx="${x}" cy="${y}" r="${Math.max(5,CS/10)}" class="dt"/>`}
+return{w:W,h:H,svg:`<rect x="2" y="2" width="${W-4}" height="${H-4}" rx="18" class="paper"/>${s}${d}${hh}`}}};return G})();
+
+/* ===== Dò mìn đối kháng 9×9 (có cắm cờ màu từng người) ===== */
+Games.ms=(()=>{const NN=81,MC=10,nb=i=>{const r=i/9|0,c=i%9,o=[];for(let a=-1;a<=1;a++)for(let b=-1;b<=1;b++){if(!a&&!b)continue;const y=r+a,x=c+b;if(y>=0&&y<9&&x>=0&&x<9)o.push(y*9+x)}return o},num=(m,i)=>nb(i).reduce((a,j)=>a+m[j],0),
+flg=(x,y,c,k,a)=>`<g transform="translate(${x-5*k} ${y+1}) scale(${k})"><g${a?' class="pp"':''}><rect x="-10" y="13" width="22" height="5" rx="2" fill="#475569"/><rect x="-1.5" y="-19" width="3" height="33" rx="1.5" fill="#475569"/><path d="M1.5 -19L22 -10L1.5 -1Z" fill="${c}" stroke="#0007" stroke-width="1.5"/></g></g>`;
+const G={id:'ms',name:'Dò mìn',ico:'💣',color:'#475569',tag:'Đối kháng · 9×9 · cắm cờ',desc:'Hai người thay phiên mở ô, có cắm cờ màu riêng để tránh mìn. Trúng mìn là thua.',sides:['Xanh','Đỏ'],cols:['#2563eb','#dc2626'],noflip:1,flag:1,
+rules:['Bàn 9×9 có 10 mìn. Hai bên thay phiên mở một ô; số trên ô cho biết có bao nhiêu mìn ở 8 ô xung quanh.','Nước đầu tiên luôn an toàn. Mở ô số 0 sẽ tự mở lan ra, người mở được cộng điểm cho tất cả ô vừa mở.','Cắm cờ 🚩 đánh dấu ô nghi có mìn: bấm nút “Cắm cờ” rồi chạm ô, hoặc chuột phải / giữ lâu. Cắm cờ không mất lượt; cờ mang màu của người cắm và chặn chính bạn lỡ tay mở ô đó (đối thủ vẫn mở được).','Ai trúng mìn thì thua ngay. Nếu mở hết 71 ô an toàn mà chưa ai trúng, bên có nhiều ô hơn thắng, bằng nhau thì hòa.'],
+init:()=>({m:null,r:new Uint8Array(NN),cnt:[0,0],fl:[new Uint8Array(NN),new Uint8Array(NN)],lf:-1,turn:0,last:null,over:null}),
+moves(S){const o=[];for(let i=0;i<NN;i++)if(!S.r[i]&&!S.fl[S.turn][i])o.push({f:null,t:i});return o},own:()=>0,
+click:(S,ui,i)=>S.r[i]?0:ui.fm?{flag:1,f:null,t:i}:S.fl[S.turn][i]?0:{f:null,t:i},
+play(S,m){const s=S.turn;if(m.flag){const fl=S.fl.map(a=>a.slice());fl[s][m.t]^=1;return{...S,fl,lf:m.t}}
+const r=S.r.slice(),cnt=S.cnt.slice(),fl=S.fl.map(a=>a.slice());let mines=S.m;if(!mines){mines=new Uint8Array(NN);const ban=new Set([m.t,...nb(m.t)]);for(let k=0;k<MC;){const x=Math.random()*NN|0;if(!mines[x]&&!ban.has(x)){mines[x]=1;k++}}}
+const N={m:mines,r,cnt,fl,lf:-1,turn:1-s,last:{f:null,t:m.t},over:null};r[m.t]=1;fl[0][m.t]=fl[1][m.t]=0;
+if(mines[m.t]){N.over={w:1-s,why:`Bên ${G.sides[s]} trúng mìn!`};return N}
+const st=[m.t];let got=0;while(st.length){const x=st.pop();got++;if(!num(mines,x))for(const y of nb(x))if(!r[y]&&!mines[y]&&!fl[s][y]){r[y]=1;fl[0][y]=fl[1][y]=0;st.push(y)}}
+cnt[s]+=got;if(cnt[0]+cnt[1]>=NN-MC){const t=cnt[0]==cnt[1];N.over={w:t?null:cnt[0]>cnt[1]?0:1,why:`${t?'Hòa':'Mở hết ô an toàn'}: ${cnt[0]} – ${cnt[1]}`}}return N},
+bot(S,lv){const s=S.turn,r=S.r,m=S.m,fb=S.fl[s],u=[];for(let i=0;i<NN;i++)if(!r[i]&&!fb[i])u.push(i);const pk=a=>({f:null,t:a[Math.random()*a.length|0]});if(!m)return{f:null,t:40};if(lv==1&&Math.random()<.6)return pk(u);
+const K=new Set,F=new Set;for(let ch=1;ch;){ch=0;for(let i=0;i<NN;i++){if(!r[i])continue;const n=num(m,i),un=nb(i).filter(j=>!r[j]&&!K.has(j)),mk=nb(i).filter(j=>K.has(j)).length;if(!un.length)continue;
+if(n===mk){for(const j of un)if(!F.has(j)){F.add(j);ch=1}}else if(n-mk===un.length){for(const j of un){K.add(j);ch=1}}}}
+if(lv>1){const k=[...K].find(i=>!fb[i]);if(k!=null)return{flag:1,f:null,t:k}}
+const sf=u.filter(i=>F.has(i));if(sf.length)return pk(sf);const c=u.filter(i=>!K.has(i));if(!c.length)return pk(u);if(lv==2)return pk(c);
+const p0=(MC-K.size)/c.length;let best=c[0],bv=9;for(const i of c){let p=-1;for(const j of nb(i))if(r[j]){const un=nb(j).filter(k=>!r[k]&&!K.has(k)).length;p=Math.max(p,(num(m,j)-nb(j).filter(k=>K.has(k)).length)/un)}if(p<0)p=p0;p+=Math.random()*.01;if(p<bv){bv=p;best=i}}return{f:null,t:best}},
+info:(S,side)=>`${S.cnt[side]} ô · 🚩${S.fl[side].reduce((a,b)=>a+b,0)}`,
+view(S,ui,o){const CS=66,M=26,W=9*CS+2*M,px=i=>[M+i%9*CS+CS/2,M+(i/9|0)*CS+CS/2];let s='';
+for(let i=0;i<NN;i++){const[x,y]=px(i),v=S.r[i],mn=S.m&&S.m[i],l=S.last&&S.last.t===i,f0=S.fl[0][i],f1=S.fl[1][i],a=o.anim&&S.lf===i;
+s+=`<rect x="${x-CS/2+2}" y="${y-CS/2+2}" width="${CS-4}" height="${CS-4}" rx="7" class="${v?'mr':'mu'}${l?' ml':''}"/>`;
+if(v){if(mn)s+=`<text x="${x}" y="${y+2}" class="mt" font-size="34">💥</text>`;else{const n=num(S.m,i);if(n)s+=`<text x="${x}" y="${y+2}" class="mt n${n}${o.anim&&l?' pp':''}" font-size="34">${n}</text>`}}
+else{if(S.over&&mn)s+=`<text x="${x}" y="${y+2}" class="mt" font-size="30" opacity=".75">💣</text>`;
+else if(f0&&f1)s+=flg(x-12,y,G.cols[0],.7,a)+flg(x+12,y,G.cols[1],.7,a);else if(f0||f1)s+=flg(x,y,G.cols[f1?1:0],.95,a);
+if(S.over&&!mn&&(f0||f1))s+=`<text x="${x}" y="${y+4}" class="mt" font-size="30" fill="#ef4444">✖</text>`;
+s+=`<rect x="${x-CS/2}" y="${y-CS/2}" width="${CS}" height="${CS}" fill="transparent" data-i="${i}"/>`}}
+return{w:W,h:W,svg:`<rect x="2" y="2" width="${W-4}" height="${W-4}" rx="16" class="frame"/>${s}`}}};return G})();
+
+/* ===== Nối vào game hiện có ===== */
+LIST[7]=Games.db;LIST[8]=Games.ms;
+try{$('#cards').innerHTML=LIST.map((G,k)=>`<button class="card" style="--c:${G.color}" data-k="${k}"><span class="ico">${G.ico}</span><b>${G.name}</b><small>${G.tag}</small><p>${G.desc}</p></button>`).join('')}catch(e){console.error(e)}
+try{const X=Games.xq;X.rules[2]='Tốt qua sông được đi ngang. Hai Tướng đối mặt nhau trên một cột (không quân chắn) thì bên đến lượt được ăn Tướng ngay, nên đừng để lộ mặt Tướng.';X.rules.push('Hòa nếu 100 nước liên tiếp không ăn quân hoặc lặp lại thế cờ 3 lần.');X.status=S=>X.moves({...S,turn:1-S.turn}).some(m=>Math.abs(S.b[m.t])==1)?'Tướng bị chiếu! ':''}catch(e){console.error(e)}
+const _draw=draw;draw=function(){_draw();try{const{G,S,ui}=R;$('#ti').textContent=G.ico+' '+G.name+(G.sub?' · '+G.sub(S):'');if(ui.fm&&!S.over)$('#st').textContent='🚩 Đang cắm cờ · '+$('#st').textContent;const f=$('#fg');f.hidden=!(G.flag&&!S.over&&!isBot());f.classList.toggle('on',!!ui.fm)}catch(e){console.error(e)}};
+doMove=function(m){const r=R;r.ui={sel:null,fm:m.flag?r.ui.fm:0};r.S=r.G.play(r.S,m);r.anim=1;
+if(r.G.id=='xq'&&!r.S.over){r.kc=r.kc||{};r.hm=r.hm||0;r.pc=r.pc||0;const S=r.S,nc=S.cap[0].length+S.cap[1].length,k=S.b.join('')+S.turn;r.hm=nc>r.pc?0:r.hm+1;r.pc=nc;r.kc[k]=(r.kc[k]||0)+1;
+if(r.hm>=100)S.over={w:null,why:'Hòa: 100 nước liên tiếp không ăn quân'};else if(r.kc[k]>=3)S.over={w:null,why:'Hòa: lặp lại thế cờ 3 lần'}}
+draw();if(r.S.over)return endGame();botGo(m.flag?150:450)};
+botGo=function(d=450){if(!isBot())return;const r=R;setTimeout(()=>{if(R!==r||r.S.over)return;const m=r.G.bot(r.S,r.lv);if(m)doMove(m)},d)};
+/* ===== Kiểu bàn, màu quân, cắm cờ, tùy chọn ===== */
+const BT=[['Gỗ cổ điển','#f0d9b5','#b58863','#3b2a1c','#c9a25f','#e8c27c','#6b4a22','#e3b66b'],
+['Xanh lá giải đấu','#eeeed2','#769656','#2f3d2a','#9fbf7a','#d9e6b8','#4d6b2f','#dcc27a'],
+['Đại dương','#dee3e6','#8ca2ad','#22303a','#7fa3b8','#cfe3ee','#35617a','#d9c08a'],
+['Hồng anh đào','#fde8ef','#e59bb5','#5a2a3c','#f0a8c0','#fbd9e4','#a23b62','#f1cf9a'],
+['Tím mộng mơ','#ebe3fa','#9a7ac7','#2e2347','#b79de3','#e4d8fa','#5b3d96','#dcc9a0'],
+['Ngọc bích','#d9f2e6','#3f9b7c','#173a33','#68c3a3','#c8ecd9','#1f6b55','#d8c385'],
+['Hoàng hôn','#ffe3bf','#e0793a','#4a2412','#ffb36b','#ffd9a8','#9c3d12','#e9b565'],
+['Đá đen','#9aa0aa','#4e535c','#15171b','#6b7280','#b5bac3','#2f343c','#a9a08c']];
+const CP=[['Trắng – Đen','#ffffff','#222222','#1b1b1f','#f3e9d0'],['Vàng – Xanh dương','#ffd84d','#5a3d00','#1e40af','#dbeafe'],['Bạc – Đỏ rượu','#e5e7eb','#374151','#9f1239','#ffe4e6'],['Ngọc – Tím','#99f6e4','#134e4a','#6d28d9','#ede9fe'],['Cam – Xanh rêu','#fdba74','#7c2d12','#166534','#dcfce7'],['Hồng – Xám đen','#fbcfe8','#831843','#1f2937','#e5e7eb']];
+const XP=[['Đỏ – Đen','#c0281c','#1a1a1a','#fff1d0'],['Xanh dương – Đỏ','#1d4ed8','#b91c1c','#eef4ff'],['Xanh lục – Cam','#15803d','#c2410c','#f0fdf4'],['Tím – Vàng đồng','#7e22ce','#a16207','#faf5ff'],['Hồng – Xanh đen','#be185d','#0f3d57','#fff1f6'],['Nâu đồng – Đen','#b45309','#111827','#fffbeb']];
+const sv=(k,v)=>{try{localStorage.setItem('cq_'+k,v)}catch(e){}},ld=k=>{try{return localStorage.getItem('cq_'+k)}catch(e){return null}};
+function theme(){const r=document.documentElement.style,b=BT[+$('#bt').value],c=CP[+$('#cp').value],x=XP[+$('#xp').value];
+[['sq1',b[1]],['sq2',b[2]],['fr',b[3]],['fs',b[4]],['xb',b[5]],['xs',b[6]],['wd',b[7]],['cw',c[1]],['cws',c[2]],['cb',c[3]],['cbs',c[4]],['x0',x[1]],['x1',x[2]],['xd',x[3]]].forEach(([k,v])=>r.setProperty('--'+k,v))}
+[['bt',BT],['cp',CP],['xp',XP]].forEach(([id,a])=>{const e=$('#'+id);e.innerHTML=a.map((t,i)=>`<option value="${i}">${t[0]}</option>`).join('');const v=ld(id);if(v!=null&&a[+v])e.value=v;e.onchange=()=>{sv(id,e.value);theme()}});theme();
+$('#dm').innerHTML=Games.db.maps.map((n,i)=>`<option value="${i}">${n}</option>`).join('');$('#dm').value=ld('dm')??1;$('#dm').onchange=()=>sv('dm',$('#dm').value);
+let lfT=0,lpT=0;const fgo=t=>{if(!R||!R.G.flag||R.S.over||isBot()||Date.now()-lfT<600)return;const k=t&&t.closest&&t.closest('[data-i]');if(!k)return;lfT=Date.now();const m=R.G.click(R.S,{...R.ui,fm:1},+k.dataset.i);if(m)doMove(m)};
+$('#bd').oncontextmenu=e=>{e.preventDefault();fgo(e.target)};
+$('#bd').onpointerdown=e=>{clearTimeout(lpT);if(e.pointerType=='mouse')return;const t=e.target;lpT=setTimeout(()=>fgo(t),450)};
+$('#bd').onpointerup=$('#bd').onpointercancel=$('#bd').onpointerleave=()=>clearTimeout(lpT);
+$('#fg').onclick=()=>{if(R&&R.G.flag&&!isBot()&&!R.S.over){R.ui.fm=R.ui.fm?0:1;draw()}};
+$('#bd').addEventListener('click',e=>{if(Date.now()-lfT<600)e.stopImmediatePropagation()},true);
+/* ===== ADD-ON 2 Cờ Quán: Elo · Cờ vây 9/13/19 · Cờ úp tướng · Cờ đam · Ô ăn quan =====
+   CÁCH DÙNG: dán nguyên khối này vào cuối file, ngay trên thẻ đóng của <script> cuối cùng (sau add-on cũ). ===== */
+try{document.head.insertAdjacentHTML('beforeend',`<style>
+.g-jq .pc{fill:var(--xd,#fff1d0)}.g-jq .pc.s0{stroke:var(--x0,#c0281c)}.g-jq .pc.s1{stroke:var(--x1,#1a1a1a)}.g-jq .pt.s0{fill:var(--x0,#c0281c)}.g-jq .pt.s1{fill:var(--x1,#1a1a1a)}
+.g-jq .bg{fill:var(--xb,#e8c27c);stroke:var(--xs,#6b4a22);stroke-width:3}.g-jq .gl{fill:none;stroke:var(--xs,#5a3a18);stroke-width:2}.g-jq .rv{font-size:30px;fill:var(--xs,#6b4a22);text-anchor:middle;dominant-baseline:central;opacity:.7;letter-spacing:6px}
+.g-jq .pc.down{fill:#7a4a22}.g-jq .pc.down.s0{stroke:var(--x0,#c0281c)}.g-jq .pc.down.s1{stroke:var(--x1,#1a1a1a)}.g-jq .pc.down+.pt{fill:#f1d39a;font-size:34px}
+.g-ck .pc.s0{fill:#e5484d;stroke:#7f1d1d}.g-ck .pc.s1{fill:#2b2b30;stroke:#d4d4d8}.g-ck .pt{fill:#fde68a}
+.g-oq .cl{fill:var(--sq1,#f0d9b5);stroke:var(--fs,#c9a25f);stroke-width:2}.g-oq .qn{fill:var(--sq2,#b58863)}.g-oq .os{fill:#7c4a21;stroke:#3b2a1c;stroke-width:1.5;pointer-events:none}
+.g-oq .oqq{fill:#f59e0b;stroke:#7c2d12;stroke-width:3;pointer-events:none}.g-oq .qt{font-size:34px;fill:#7c2d12}.g-oq .oc{font-size:22px;font-weight:800;fill:#2b2117;text-anchor:middle;pointer-events:none}</style>`);
+$('.st').insertAdjacentHTML('beforeend','<label>Cỡ bàn cờ vây<select id="gs"><option value="9">9×9<option value="13">13×13<option value="19">19×19</select></label>');
+$('#th').insertAdjacentHTML('beforebegin','<button class="gh" id="el">📊 Elo</button>')}catch(e){console.error(e)}
+
+const pbot=(G,S,lv,ds,z)=>{let best=null,bv=-1e9;const nz=[4,1,0][lv-1]*z;for(const m of G.moves(S)){const v=-nm(G,G.play(S,m),ds[lv-1]-1,-1e9,1e9)+Math.random()*nz;if(v>bv){bv=v;best=m}}return best};
+
+/* ===== Cờ vây 9×9 / 13×13 / 19×19 ===== */
+Games.go=(()=>{let N=9;const gn=i=>{const r=i/N|0,c=i%N,n=[];if(r)n.push(i-N);if(r<N-1)n.push(i+N);if(c)n.push(i-1);if(c<N-1)n.push(i+1);return n},
+grp=(b,i)=>{const col=b[i],g=[i],seen=new Set(g),lib=new Set;for(let k=0;k<g.length;k++)for(const y of gn(g[k])){if(!b[y])lib.add(y);else if(b[y]===col&&!seen.has(y)){seen.add(y);g.push(y)}}return{g,lib:lib.size}},
+put=(b,i,col)=>{if(b[i])return null;const nb=b.slice();nb[i]=col;let cap=0;for(const y of gn(i))if(nb[y]&&nb[y]!==col){const g=grp(nb,y);if(!g.lib){for(const z of g.g)nb[z]=0;cap+=g.g.length}}return grp(nb,i).lib?{b:nb,cap}:null},
+lg=(S,i)=>{const r=put(S.b,i,S.turn+1);return r&&!S.keys.includes(r.b.join(''))?r:null},km=()=>N>15?7.5:6.5,
+area=b=>{const sc=[0,0,0],seen=new Uint8Array(N*N);for(let i=0;i<N*N;i++){if(b[i])sc[b[i]]++;else if(!seen[i]){const st=[i],n=[i],bd=new Set;seen[i]=1;while(st.length){const x=st.pop();for(const y of gn(x)){if(b[y])bd.add(b[y]);else if(!seen[y]){seen[y]=1;st.push(y);n.push(y)}}}if(bd.size==1)sc[[...bd][0]]+=n.length}}return sc};
+const G={id:'go',name:'Cờ vây',ico:'⚫',color:'#334155',tag:'Chiến lược · 9 / 13 / 19',desc:'Đặt quân vây đất, bắt quân đối phương. Chọn cỡ bàn 9×9, 13×13 hoặc 19×19 ở menu.',sides:['Đen','Trắng'],cols:['#111','#f4f4f4'],noflip:1,pass:1,
+rules:['Chọn cỡ bàn (9×9, 13×13, 19×19) ở menu. Đen đi trước, lần lượt đặt quân lên giao điểm. Quân hết "khí" (không còn ô trống liền kề) sẽ bị bắt.','Không được tự sát và không được lặp lại thế cờ cũ (luật Ko).','Hai bên liên tiếp bỏ lượt thì ván kết thúc. Tính điểm theo vùng: quân trên bàn + đất vây kín, Trắng được cộng komi (6,5; bàn 19×19 là 7,5).','Hãy bắt hết quân chết trước khi bỏ lượt vì máy không tự gỡ quân chết.'],
+init(){N=+$('#gs').value||9;return{N,b:new Int8Array(N*N),turn:0,keys:['0'.repeat(N*N)],pass:0,caps:[0,0],n:0,last:null,over:null}},
+moves(S){N=S.N;const o=[];for(let i=0;i<N*N;i++)if(!S.b[i]&&lg(S,i))o.push({f:null,t:i});o.push({pass:1,f:null,t:-1});return o},own:()=>0,click(S,ui,i){N=S.N;return S.b[i]||!lg(S,i)?0:{f:null,t:i}},
+play(S,m){N=S.N;const s=S.turn,X={N,b:S.b,turn:1-s,keys:S.keys,pass:m.pass?S.pass+1:0,caps:S.caps.slice(),last:null,over:null,n:S.n+1};if(!m.pass){const r=lg(S,m.t);X.b=r.b;X.caps[s]+=r.cap;X.keys=S.keys.concat(r.b.join(''));X.last={f:null,t:m.t}}
+if(X.pass>=2||X.n>=N*N*2){const a=area(X.b),w=a[2]+km();X.over={w:a[1]>w?0:1,why:`Đen ${a[1]} – Trắng ${w} (komi ${km()})`}}return X},
+bot(S,lv){N=S.N;const s=S.turn+1,o=3-s,b=S.b,nz=[7,2.5,.7][lv-1];let best=null,bv=-9;
+for(let i=0;i<N*N;i++){if(b[i])continue;const r=lg(S,i);if(!r)continue;const ns=gn(i);if(!r.cap&&ns.every(y=>b[y]===s))continue;let v=r.cap*10+Math.min(grp(r.b,i).lib,4);
+for(const y of ns){if(b[y]===s&&grp(b,y).lib===1&&grp(r.b,i).lib>1)v+=7;if(b[y]===o&&r.b[y]&&grp(r.b,y).lib===1)v+=3}
+const e=Math.min(i/N|0,i%N,N-1-(i/N|0),N-1-i%N);v+=[-3,1,1.5,1.5,1.5][Math.min(e,4)]+(ns.some(y=>b[y])?1:0)+Math.random()*nz;if(v>bv){bv=v;best={f:null,t:i}}}
+const a=area(b),lead=a[s]-a[o]+(s==2?km():-km())>0;return!best||bv<0||S.n>N*N*1.8||(S.pass&&lead)?{pass:1,f:null,t:-1}:best},
+status:S=>S.pass?'Đối thủ vừa bỏ lượt! ':'',info:(S,side)=>`bắt ${S.caps[side]}`,
+view(S,ui,o){N=S.N;const CS=N>13?33:N>9?47:66,M=Math.round(CS*.73),W=(N-1)*CS+2*M,px=i=>[M+i%N*CS,M+(i/N|0)*CS];let g='',s='';
+for(let k=0;k<N;k++)g+=`M${M} ${M+k*CS}H${M+(N-1)*CS}M${M+k*CS} ${M}V${M+(N-1)*CS}`;
+const q=N>15?[3,9,15]:N>9?[3,9]:[2,6],st=[];q.forEach(r=>q.forEach(c=>st.push(r*N+c)));if(N<19)st.push((N>>1)*N+(N>>1));
+for(const i of st){const[x,y]=px(i);s+=`<circle cx="${x}" cy="${y}" r="${CS*.083}" class="star"/>`}
+for(let i=0;i<N*N;i++){const v=S.b[i],[x,y]=px(i),l=S.last&&S.last.t===i;if(v)s+=`<circle cx="${x}" cy="${y}" r="${CS*.455}" class="stn t${v}${o.anim&&l?' pp':''}"/>`+(l?`<circle cx="${x}" cy="${y}" r="${CS*.14}" class="lm t${v}"/>`:'');s+=hit(px,i,CS/2)}
+return{w:W,h:W,svg:`<defs><radialGradient id="gb" cx=".35" cy=".3"><stop offset="0" stop-color="#777"/><stop offset="1" stop-color="#050505"/></radialGradient><radialGradient id="gw" cx=".35" cy=".3"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#c9c9c9"/></radialGradient></defs><rect x="2" y="2" width="${W-4}" height="${W-4}" rx="16" class="wood"/><path d="${g}" class="gl"/>${s}`}}};return G})();
+
+/* ===== Cờ úp tướng (揭棋): bàn cờ tướng, quân úp đi theo vị trí rồi lật ===== */
+Games.jq=(()=>{const GL={1:'帥將',2:'仕士',3:'相象',4:'傌馬',5:'俥車',6:'炮砲',7:'兵卒'},V=[0,0,200,200,400,900,450,100],sg=t=>t?-1:1,
+KN=[[-2,-1],[-2,1],[2,-1],[2,1],[-1,-2],[-1,2],[1,-2],[1,2]],O=[[1,0],[-1,0],[0,1],[0,-1]],D=[[1,1],[1,-1],[-1,1],[-1,-1]],
+TP=(()=>{const a=new Uint8Array(90),k=[5,4,3,2,1,2,3,4,5];for(let c=0;c<9;c++)a[c]=k[c];[1,7].forEach(c=>a[18+c]=6);[0,2,4,6,8].forEach(c=>a[27+c]=7);return a})(),
+pt=(i,s)=>TP[s>0?(9-(i/9|0))*9+i%9:i];
+const mg=(b,h,s)=>{const o=[];for(let i=0;i<90;i++){const v=b[i];if(!v||v*s<0)continue;const t=h[i]?pt(i,s):Math.abs(v),r=i/9|0,c=i%9,f=s>0?-1:1;
+const ob=(rr,cc)=>rr<0||rr>9||cc<0||cc>8,A=(rr,cc)=>{if(ob(rr,cc))return 1;const q=b[rr*9+cc];if(q*s<=0)o.push({f:i,t:rr*9+cc});return q},pal=(rr,cc)=>cc>2&&cc<6&&(s>0?rr>6:rr<3);
+if(t==1){for(const[d,e]of O)if(pal(r+d,c+e))A(r+d,c+e);for(let k=1;r+f*k>=0&&r+f*k<10;k++){const q=b[(r+f*k)*9+c];if(q){if(q===-s)o.push({f:i,t:(r+f*k)*9+c});break}}}
+else if(t==2){for(const[d,e]of D)if(h[i]?pal(r+d,c+e):1)A(r+d,c+e)}
+else if(t==3){for(const[d,e]of D){const rr=r+2*d,cc=c+2*e;if(!ob(rr,cc)&&(r<5)==(rr<5)&&!b[(r+d)*9+c+e])A(rr,cc)}}
+else if(t==4){for(const[d,e]of KN)if(!b[(r+(Math.abs(d)==2?d/2:0))*9+c+(Math.abs(e)==2?e/2:0)])A(r+d,c+e)}
+else if(t==5){for(const[d,e]of O)for(let k=1;k<10;k++)if(A(r+d*k,c+e*k))break}
+else if(t==6){for(const[d,e]of O){let k=1;for(;!ob(r+d*k,c+e*k)&&!b[(r+d*k)*9+c+e*k];k++)o.push({f:i,t:(r+d*k)*9+c+e*k});for(k++;!ob(r+d*k,c+e*k);k++){const q=b[(r+d*k)*9+c+e*k];if(q){if(q*s<0)o.push({f:i,t:(r+d*k)*9+c+e*k});break}}}}
+else{A(r+f,c);if(s>0?r<5:r>4){A(r,c-1);A(r,c+1)}}}return o};
+const det=S=>{const b=S.b.slice();for(const s of[1,-1]){const ix=[];for(let i=0;i<90;i++)if(S.h[i]&&b[i]*s>0)ix.push(i);const ty=ix.map(i=>Math.abs(b[i])).sort(()=>Math.random()-.5);ix.forEach((i,k)=>b[i]=s*ty[k])}return{...S,b}};
+const G={id:'jq',name:'Cờ úp tướng',ico:'揭',color:'#9a3412',tag:'Úp quân · 9×10',desc:'Bàn cờ tướng thường nhưng 15 quân mỗi bên úp xuống. Quân úp đi theo ô nó đứng, đi xong mới lật ra.',sides:['Đỏ','Đen'],cols:['#d6402f','#26262b'],
+rules:['Mỗi bên có 16 quân: Tướng để ngửa, 15 quân còn lại úp xuống và xáo ngẫu nhiên ngay tại ô xuất phát. Đỏ đi trước.','Quân úp đi theo vị trí nó đang đứng (úp ở ô Xe đi như Xe, ở ô Pháo đi như Pháo, ô Tốt đi như Tốt…). Đi xong quân được lật lên và từ đó đi đúng theo danh tính thật.','Quân úp bị ăn cũng bị lật ra. Sĩ/Tượng lật ra ngoài vị trí gốc vẫn đi được: Sĩ bước chéo 1 ô ở bất kỳ đâu, Tượng đi chéo 2 ô (cản mắt) và không qua sông.','Ăn Tướng hoặc làm đối phương hết nước đi là thắng. Hai Tướng đối mặt (không quân chắn) thì bên đến lượt ăn Tướng ngay. Quá 300 nước thì hòa.'],
+init(){const b=new Int8Array(90),h=new Uint8Array(90);for(const s of[1,-1]){const sq=[],ty=[];for(let i=0;i<90;i++){const t=pt(i,s);if(t){if(t==1)b[i]=s;else{sq.push(i);ty.push(t)}}}ty.sort(()=>Math.random()-.5);sq.forEach((i,k)=>{b[i]=s*ty[k];h[i]=1})}return{b,h,turn:0,last:null,over:null,cap:[[],[]],n:0,rv:''}},
+moves:S=>mg(S.b,S.h,sg(S.turn)),own:(S,i)=>S.b[i]*sg(S.turn)>0,click:(S,ui,i)=>stdClick(G,S,ui,i),
+play(S,m){const b=S.b.slice(),h=S.h.slice(),s=S.turn,cap=S.cap.map(a=>a.slice()),q=b[m.t],rv=h[m.f]?GL[Math.abs(b[m.f])][s]:'';if(q)cap[s].push(Math.abs(q));b[m.t]=b[m.f];b[m.f]=0;h[m.t]=0;h[m.f]=0;
+const X={b,h,turn:1-s,last:{f:m.f,t:m.t},over:null,cap,n:S.n+1,rv};if(Math.abs(q)==1)X.over={w:s,why:'Ăn được Tướng!'};else if(!mg(b,h,sg(X.turn)).length)X.over={w:s,why:'Đối phương hết nước đi'};else if(X.n>=300)X.over={w:null,why:'Hòa: quá 300 nước'};return X},
+ev(S){let v=0;for(let i=0;i<90;i++){const p=S.b[i];if(!p)continue;const t=Math.abs(p),r=i/9|0,s=p>0?1:-1;let x=S.h[i]?230:V[t];if(!S.h[i]){if(t==7&&(s>0?r<5:r>4))x=200+(s>0?5-r:r-4)*8;if(t==4||t==6)x+=(4-Math.abs(i%9-4))*4}v+=s*x}return S.turn?-v:v},
+bot(S,lv){const ns=[1,2,2][lv-1],d=[1,2,3][lv-1],nz=[40,8,0][lv-1],sc=new Map;for(let k=0;k<ns;k++){const Dt=det(S);for(const m of G.moves(Dt)){const v=-nm(G,G.play(Dt,m),d-1,-1e9,1e9),key=m.f*90+m.t;sc.set(key,(sc.get(key)||0)+v)}}
+let best=null,bv=-1e9;for(const m of G.moves(S)){const v=sc.get(m.f*90+m.t)/ns+Math.random()*nz;if(v>bv){bv=v;best=m}}return best},
+status:S=>(S.rv?'Lật ra '+S.rv+'. ':'')+(G.moves({...S,turn:1-S.turn}).some(m=>Math.abs(S.b[m.t])==1)?'Tướng bị chiếu! ':''),info:(S,side)=>S.cap[side].map(t=>GL[t][1-side]).join(''),
+view(S,ui,o){const CS=66,M=46,W=8*CS+2*M,H=9*CS+2*M,px=i=>{let r=i/9|0,c=i%9;if(o.flip){r=9-r;c=8-c}return[M+c*CS,M+r*CS]};let g='',s='';
+for(let r=0;r<10;r++)g+=`M${M} ${M+r*CS}H${M+8*CS}`;
+for(let c=0;c<9;c++)g+=c%8?`M${M+c*CS} ${M}V${M+4*CS}M${M+c*CS} ${M+5*CS}V${M+9*CS}`:`M${M+c*CS} ${M}V${M+9*CS}`;
+for(const y of[0,7])g+=`M${M+3*CS} ${M+y*CS}l${2*CS} ${2*CS}M${M+5*CS} ${M+y*CS}l${-2*CS} ${2*CS}`;
+s+=`<text x="${M+2*CS}" y="${M+4.5*CS}" class="rv">楚河</text><text x="${M+6*CS}" y="${M+4.5*CS}" class="rv">漢界</text>`+mark(px,S,ui,31);
+for(let i=0;i<90;i++){const v=S.b[i];if(v){const sd=v>0?0:1;s+=S.h[i]?disc(o,S,i,px,29,'❖',sd,'down'):disc(o,S,i,px,29,GL[Math.abs(v)][sd],sd)}}
+s+=hints(G,S,ui,px);for(let i=0;i<90;i++)s+=hit(px,i,CS/2);
+return{w:W,h:H,svg:`<rect x="2" y="2" width="${W-4}" height="${H-4}" rx="14" class="bg"/><path d="${g}" class="gl"/>${s}`}}};return G})();
+
+/* ===== Cờ đam 8×8 (ăn bắt buộc, ăn liên hoàn, quân đi chéo, lên vua) ===== */
+Games.ck=(()=>{const gm=(b,s)=>{const sg=s?-1:1,d0=s?1:-1,jp=[],J=(i,k,cp,f)=>{let e=0;const r=i>>3,c=i&7;for(const dr of k?[-1,1]:[d0])for(const dc of[-1,1]){const r2=r+2*dr,c2=c+2*dc;if(r2<0||r2>7||c2<0||c2>7)continue;const x=(r+dr)*8+c+dc,y=r2*8+c2;if(b[x]*sg<0&&!cp.includes(x)&&!b[y]){e=1;const n=cp.concat(x);if(!k&&r2==(s?7:0))jp.push({f,t:y,cp:n});else J(y,k,n,f)}}if(!e&&cp.length)jp.push({f,t:i,cp})};
+for(let i=0;i<64;i++)if(b[i]*sg>0)J(i,Math.abs(b[i])==2,[],i);let o=jp;
+if(!o.length){for(let i=0;i<64;i++)if(b[i]*sg>0){const r=i>>3,c=i&7;for(const dr of Math.abs(b[i])==2?[-1,1]:[d0])for(const dc of[-1,1]){const r2=r+dr,c2=c+dc;if(r2>=0&&r2<8&&c2>=0&&c2<8&&!b[r2*8+c2])o.push({f:i,t:r2*8+c2,cp:[]})}}}
+const u=new Map;for(const m of o)if(!u.has(m.f*64+m.t))u.set(m.f*64+m.t,m);return[...u.values()]};
+const G={id:'ck',name:'Cờ đam',ico:'⛀',color:'#b91c1c',tag:'Dân gian · 8×8',desc:'Đi chéo, nhảy qua quân đối phương để ăn (bắt buộc ăn, ăn liên hoàn). Tới cuối bàn thì lên vua.',sides:['Đỏ','Đen'],cols:['#e5484d','#2b2b30'],
+rules:['Mỗi bên 12 quân trên các ô tối. Đỏ đi trước. Quân thường đi chéo tiến 1 ô vào ô trống.','Ăn quân bằng cách nhảy chéo qua quân đối phương vào ô trống ngay sau nó; có thể nhảy liên tiếp nhiều lần. Khi có thể ăn thì BẮT BUỘC phải ăn.','Quân thường chỉ đi và ăn theo hướng tiến. Chạm hàng cuối của đối phương thì lên Vua (♛): đi và ăn được cả 4 hướng chéo, mỗi lần 1 ô.','Đối phương hết quân hoặc hết nước đi là thua. 40 nước vua liên tiếp không ăn quân thì hòa.'],
+init(){const b=new Int8Array(64);for(let i=0;i<64;i++){const r=i>>3,c=i&7;if((r+c)&1){if(r<3)b[i]=-1;else if(r>4)b[i]=1}}return{b,turn:0,hm:0,n:0,last:null,over:null}},
+moves:S=>gm(S.b,S.turn),own:(S,i)=>S.b[i]*(S.turn?-1:1)>0,click:(S,ui,i)=>stdClick(G,S,ui,i),
+play(S,m){const b=S.b.slice(),s=S.turn,sg=s?-1:1,k=Math.abs(b[m.f])==2;b[m.t]=b[m.f];b[m.f]=0;for(const x of m.cp)b[x]=0;if(!k&&(m.t>>3)==(s?7:0))b[m.t]=2*sg;
+const X={b,turn:1-s,last:{f:m.f,t:m.t},n:S.n+1,hm:m.cp.length||!k?0:S.hm+1,over:null};
+if(!gm(b,1-s).length)X.over={w:s,why:'Đối phương hết quân hoặc hết nước đi'};else if(X.hm>=80)X.over={w:null,why:'Hòa: 40 nước vua không ăn quân'};else if(X.n>=300)X.over={w:null,why:'Hòa: quá 300 nước'};return X},
+ev(S){let v=0;for(let i=0;i<64;i++){const p=S.b[i];if(!p)continue;const s=p>0?1:-1,r=i>>3,c=i&7;v+=s*(Math.abs(p)==2?170:100+(s>0?7-r:r)*6)+s*(c>1&&c<6?4:0)}return S.turn?-v:v},
+bot:(S,lv)=>pbot(G,S,lv,[2,4,5],10),status:S=>G.moves(S).some(m=>m.cp.length)?'Bắt buộc ăn quân! ':'',info:(S,side)=>S.b.filter(x=>x&&(x>0)===(side==0)).length+' quân',
+view(S,ui,o){const CS=86,M=34,W=8*CS+2*M,px=i=>{let r=i>>3,c=i&7;if(o.flip){r=7-r;c=7-c}return[M+c*CS+CS/2,M+r*CS+CS/2]};let s='';
+for(let i=0;i<64;i++){const[x,y]=px(i);s+=`<rect x="${x-CS/2}" y="${y-CS/2}" width="${CS}" height="${CS}" class="${((i>>3)+(i&7))&1?'sqd':'sql'}"/>`}
+s+=mark(px,S,ui,CS*.48);for(let i=0;i<64;i++){const v=S.b[i];if(v)s+=disc(o,S,i,px,34,Math.abs(v)==2?'♛':'',v>0?0:1)}
+s+=hints(G,S,ui,px);for(let i=0;i<64;i++)s+=hit(px,i,CS/2);return{w:W,h:W,svg:`<rect x="2" y="2" width="${W-4}" height="${W-4}" rx="14" class="frame"/>${s}`}}};return G})();
+
+/* ===== Ô ăn quan (2 hàng × 5 ô dân + 2 ô quan) ===== */
+Games.oq=(()=>{const own=(s,i)=>s?i>0&&i<6:i>6,mvs=S=>{const o=[],s=S.turn;for(let i=0;i<12;i++)if(own(s,i)&&S.b[i]>0)for(const d of[1,-1])o.push({f:i,t:(i+d+12)%12,d});return o};
+const G={id:'oq',name:'Ô ăn quan',ico:'官',color:'#92400e',tag:'Dân gian Việt · rải quân',desc:'Rải dân quanh bàn, gặp ô trống thì ăn ô liền sau. Quan trị giá 10 điểm, nhiều điểm hơn thì thắng.',sides:['Dưới','Trên'],cols:['#d6402f','#2563eb'],
+rules:['Bàn có 10 ô dân (5 dân mỗi ô) và 2 ô quan (1 quan, trị giá 10 điểm, ở hai đầu). Mỗi bên sở hữu 5 ô dân phía mình; bên Dưới đi trước.','Mỗi lượt: chạm ô dân có quân của mình, rồi chạm ô kề bên (trái hoặc phải) để chọn hướng. Bốc hết quân trong ô và rải lần lượt mỗi ô 1 quân.','Rải xong: nếu ô kế tiếp là ô dân có quân thì bốc tiếp và rải tiếp; nếu là ô quan có quân thì dừng lượt. Nếu ô kế tiếp trống mà ô sau nó có quân thì ăn ô đó; ăn liên tiếp được khi lại gặp “trống – có quân”.','Hết dân trên 5 ô của mình thì phải trả 5 điểm (hoặc vay) để rải mỗi ô 1 dân. Hai quan bị ăn hết (hoặc quá 200 nước) thì ván kết thúc, mỗi bên thu số dân còn phía mình. Điểm cao hơn thắng (quan = 10, dân = 1).'],
+init(){const b=new Int8Array(12),q=new Uint8Array(12);for(let i=0;i<12;i++)b[i]=i%6?5:0;q[0]=q[6]=1;return{b,q,sc:[0,0],turn:0,n:0,last:null,over:null}},
+moves:mvs,own:(S,i)=>own(S.turn,i)&&S.b[i]>0,click:(S,ui,i)=>stdClick(G,S,ui,i),
+play(S,m){const b=S.b.slice(),q=S.q.slice(),sc=S.sc.slice(),s=S.turn,d=m.d;let p=m.f,n=b[p],g=0;b[p]=0;
+for(;g++<400;){while(n>0){p=(p+d+12)%12;b[p]++;n--}let a=(p+d+12)%12;if(b[a]+q[a]>0){if(a%6){p=a;n=b[a];b[a]=0;continue}break}
+for(;;){const x=(a+d+12)%12;if(b[x]+q[x]==0)break;sc[s]+=b[x]+10*q[x];b[x]=0;q[x]=0;a=(x+d+12)%12;if(b[a]+q[a]>0)break}break}
+const t=1-s,X={b,q,sc,turn:t,last:{f:m.f,t:m.t},over:null,n:S.n+1};
+if((!q[0]&&!q[6])||X.n>=200){for(let i=1;i<6;i++){sc[1]+=b[i];sc[0]+=b[i+6]}const w=sc[0]>sc[1]?0:sc[1]>sc[0]?1:null;X.over={w,why:`Chung cuộc ${sc[0]} – ${sc[1]} điểm`}}
+else{const rg=t?[1,2,3,4,5]:[7,8,9,10,11];if(rg.every(i=>!b[i])){sc[t]-=5;rg.forEach(i=>b[i]=1)}}return X},
+ev(S){let v=(S.sc[0]-S.sc[1])*10;for(let i=1;i<6;i++)v+=(S.b[i+6]-S.b[i])*3;return S.turn?-v:v},
+bot:(S,lv)=>pbot(G,S,lv,[1,3,5],3),status:S=>S.n?'':'Chạm ô của bạn, rồi chạm ô kề bên để chọn hướng rải. ',info:(S,side)=>`${S.sc[side]} điểm`,
+view(S,ui,o){const CS=110,M=20,QW=140,W=2*M+2*QW+5*CS,H=2*CS+2*M,px=i=>{i=o.flip?(i+6)%12:i;if(i==0)return[M+QW/2,M+CS];if(i==6)return[M+QW+5*CS+QW/2,M+CS];const k=i<6?i-1:11-i;return[M+QW+k*CS+CS/2,M+(i<6?CS/2:CS*1.5)]};let s='';
+for(let i=0;i<12;i++){const[x,y]=px(i),qu=i%6==0;s+=qu?`<rect x="${x-QW/2+3}" y="${y-CS+3}" width="${QW-6}" height="${2*CS-6}" rx="${QW/2-6}" class="cl qn"/>`:`<rect x="${x-CS/2+3}" y="${y-CS/2+3}" width="${CS-6}" height="${CS-6}" rx="14" class="cl"/>`}
+s+=mark(px,S,ui,50);
+for(let i=0;i<12;i++){const[x,y]=px(i),n=S.b[i],qu=i%6==0;if(S.q[i])s+=`<circle cx="${x}" cy="${y-40}" r="32" class="oqq"/><text x="${x}" y="${y-39}" class="pt qt">♚</text>`;
+for(let k=0;k<Math.min(n,15);k++)s+=`<circle cx="${x+((k%5)-2)*14}" cy="${y+(qu?32:-8)+(k/5|0)*14}" r="6.5" class="os"/>`;
+if(n>0)s+=`<text x="${qu?x:x+34}" y="${qu?y+CS-16:y+40}" class="oc">${n}</text>`}
+if(ui.sel!=null)s+=mvs(S).filter(m=>m.f===ui.sel).map(m=>dot(px,m.t,0,12)).join('');
+for(let i=0;i<12;i++)s+=hit(px,i,i%6?48:56);return{w:W,h:H,svg:`<rect x="2" y="2" width="${W-4}" height="${H-4}" rx="20" class="frame"/>${s}`}}};return G})();
+
+/* ===== Hệ thống Elo (đấu máy & đấu người, lưu theo từng game) ===== */
+const EK='cq_elo2',BR=[800,1200,1600];let EL={};try{EL=JSON.parse(localStorage.getItem(EK))||{}}catch(e){}
+const er=g=>EL[g]||(EL[g]={me:1000,p1:1000,p2:1000}),ex=(a,b)=>1/(1+10**((b-a)/400));
+function eloUpd(){const{G,S}=R,o=S.over,ps=o.w==null?null:R.seat[o.w],e=er(G.id),sc=p=>ps==null?.5:ps==p?1:0;let t;
+if(R.vb){const a=e.me,b=BR[R.lv-1],n=Math.round(a+32*(sc(0)-ex(a,b)));e.me=n;t=`Elo vs Máy (${['Dễ','Vừa','Khó'][R.lv-1]} ${b}): ${a} → ${n} (${n>=a?'+':''}${n-a})`}
+else{const a=e.p1,b=e.p2,d=Math.round(32*(sc(0)-ex(a,b)));e.p1=a+d;e.p2=b-d;t=`Elo: Người 1 ${a} → ${e.p1} · Người 2 ${b} → ${e.p2}`}
+try{localStorage.setItem(EK,JSON.stringify(EL))}catch(x){}return t}
+const _eg=endGame;endGame=function(){const r=R;if(r&&r.S.over&&!r.eld){r.eld=1;try{r.et=eloUpd()}catch(e){console.error(e)}}_eg();try{if(r&&r.et)$('#ov .pn h1').insertAdjacentHTML('afterend','<p>'+r.et+'</p>')}catch(e){}};
+$('#el').onclick=()=>ov(`<h2>📊 Xếp hạng Elo</h2><table><tr><td><b>Game</b></td><td><b>Vs Máy</b></td><td><b>Ng.1</b></td><td><b>Ng.2</b></td></tr>${LIST.map(G=>{const e=er(G.id);return`<tr><td>${G.ico} ${G.name}</td><td>${e.me}</td><td>${e.p1}</td><td>${e.p2}</td></tr>`}).join('')}</table><p class="note">Khởi điểm 1000, K=32. Máy: Dễ 800 · Vừa 1200 · Khó 1600. “Ng.1/Ng.2” là điểm khi hai người chơi chung máy.</p><button data-a="x">Đóng</button>`);
+
+/* ===== Nối vào danh sách game ===== */
+LIST[2]=Games.go;LIST.push(Games.jq,Games.ck,Games.oq);
+try{$('#cards').innerHTML=LIST.map((G,k)=>`<button class="card" style="--c:${G.color}" data-k="${k}"><span class="ico">${G.ico}</span><b>${G.name}</b><small>${G.tag}</small><p>${G.desc}</p></button>`).join('')}catch(e){console.error(e)}
+/* ===== ADD-ON 3 Cờ Quán: Ô ăn quan rải từng quân · Cờ shogi · Ngẫu nhiên =====
+   Dán trong một thẻ <script> mới ngay trên </body> (hoặc cuối script cuối cùng). ===== */
+(()=>{
+try{document.head.insertAdjacentHTML('beforeend',`<style>
+.g-oq .cl{fill:url(#oqc);stroke:var(--fs,#c9a25f);stroke-width:2.5}.g-oq .cl.qn{fill:url(#oqq)}
+.g-oq .cl.cur{stroke:#22c55e;stroke-width:6;animation:oqg .55s ease-in-out infinite alternate}
+.g-oq .cl.cap{fill:#fecaca;stroke:#ef4444;stroke-width:6;animation:oqg .28s ease-in-out infinite alternate}
+@keyframes oqg{from{stroke-opacity:.3}to{stroke-opacity:1}}
+.g-oq .os{fill:url(#oqs);stroke:#3b2a1c;stroke-width:1.2;pointer-events:none}
+.g-oq .os.nw{animation:oqd .36s cubic-bezier(.2,.8,.3,1);transform-box:fill-box;transform-origin:center}
+@keyframes oqd{from{transform:translateY(-40px) scale(1.5);opacity:0}55%{opacity:1}}
+.g-oq .bh{fill:#111827;opacity:.9}.g-oq .bt{fill:#fde68a;font-size:21px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.g-oq .oqf{font-size:34px;font-weight:800;fill:#dc2626;stroke:#fff;stroke-width:5;paint-order:stroke;text-anchor:middle;dominant-baseline:central;pointer-events:none;transform-box:fill-box;transform-origin:center;animation:oqf 1s ease-out forwards}
+@keyframes oqf{from{transform:translateY(0) scale(.7);opacity:1}to{transform:translateY(-56px) scale(1.25);opacity:0}}
+.g-oq .oqq{filter:drop-shadow(0 3px 3px #0007)}
+.g-sg .bg{fill:var(--xb,#e8c27c);stroke:var(--xs,#6b4a22);stroke-width:3}.g-sg .gl{fill:none;stroke:var(--xs,#5a3a18);stroke-width:2}.g-sg .star{fill:var(--xs,#5a3a18)}
+.g-sg .sgp{fill:#f4dca6;stroke:#5a3a18;stroke-width:2.5;filter:drop-shadow(0 2px 2px #0006)}
+.g-sg .sgt{fill:#1b1b1b;text-anchor:middle;dominant-baseline:central;font-weight:800;pointer-events:none}.g-sg .sgt.pro{fill:#c0281c}
+.g-sg .sgn{fill:#111827;stroke:#f4dca6;stroke-width:2}.g-sg .sgc{fill:#fde68a;font-size:15px;font-weight:800;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+</style>`)}catch(e){console.error(e)}
+
+/* ===== 1. Ô ăn quan: rải từng quân, ăn có hiệu ứng ===== */
+try{const OQ=Games.oq;
+OQ.view=function(S,ui,o){const CS=110,M=20,QW=140,W=2*M+2*QW+5*CS,H=2*CS+2*M,fr=S.fr,
+px=i=>{i=o.flip?(i+6)%12:i;if(i==0)return[M+QW/2,M+CS];if(i==6)return[M+QW+5*CS+QW/2,M+CS];const k=i<6?i-1:11-i;return[M+QW+k*CS+CS/2,M+(i<6?CS/2:CS*1.5)]};
+let s='<defs><radialGradient id="oqc" cx=".5" cy=".4" r=".8"><stop offset="0" style="stop-color:var(--sq1,#f0d9b5)"/><stop offset="1" style="stop-color:var(--sq2,#b58863)"/></radialGradient><radialGradient id="oqq" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="#f7dc9a"/><stop offset="1" stop-color="#c58a35"/></radialGradient><radialGradient id="oqs" cx=".35" cy=".3"><stop offset="0" stop-color="#f1d3a3"/><stop offset="1" stop-color="#7c4a21"/></radialGradient></defs>';
+for(let i=0;i<12;i++){const[x,y]=px(i),qu=i%6==0,k=(fr&&fr.p===i&&(fr.t=='pick'||fr.t=='drop')?' cur':'')+(fr&&fr.c.includes(i)?' cap':'');
+s+=qu?`<rect x="${x-QW/2+3}" y="${y-CS+3}" width="${QW-6}" height="${2*CS-6}" rx="${QW/2-6}" class="cl qn${k}"/>`:`<rect x="${x-CS/2+3}" y="${y-CS/2+3}" width="${CS-6}" height="${CS-6}" rx="14" class="cl${k}"/>`}
+s+=mark(px,S,ui,50);
+for(let i=0;i<12;i++){const[x,y]=px(i),n=S.b[i],qu=i%6==0,cy=y+(qu?40:4),e=n>14,a=e?6.3:7.8,r=e?5:6.5;
+if(S.q[i])s+=`<circle cx="${x}" cy="${y-40}" r="32" class="oqq"/><text x="${x}" y="${y-39}" class="pt qt">♚</text>`;
+for(let j=0;j<Math.min(n,30);j++){const t=j*2.4,d=a*Math.sqrt(j+.5);s+=`<circle cx="${x+d*Math.cos(t)}" cy="${cy+d*Math.sin(t)}" r="${r}" class="os${fr&&fr.t=='drop'&&fr.p===i&&j==n-1?' nw':''}"/>`}
+if(n>0)s+=`<text x="${qu?x:x+34}" y="${qu?y+CS-16:y+42}" class="oc">${n}</text>`;
+if(fr&&fr.p===i&&fr.h>0&&(fr.t=='pick'||fr.t=='drop')){const by=y-(qu?CS-20:CS/2-20);s+=`<rect x="${x-36}" y="${by-16}" width="72" height="32" rx="16" class="bh"/><text x="${x}" y="${by+1}" class="bt">✋ ${fr.h}</text>`}
+if(fr&&fr.t=='cap'&&fr.c.includes(i))s+=`<text x="${x}" y="${y}" class="oqf">+${fr.g}</text>`}
+if(ui.sel!=null)s+=OQ.moves(S).filter(m=>m.f===ui.sel).map(m=>dot(px,m.t,0,12)).join('');
+for(let i=0;i<12;i++)s+=hit(px,i,i%6?48:56);
+return{w:W,h:H,svg:`<rect x="2" y="2" width="${W-4}" height="${H-4}" rx="20" class="frame"/>${s}`}};
+const tr=(S,m)=>{const b=Array.from(S.b),q=Array.from(S.q),sc=S.sc.slice(),s=S.turn,d=m.d,F=[],sn=(p,h,t,c,g)=>F.push({b:b.slice(),q:q.slice(),sc:sc.slice(),p,h,t,c:c||[],g});
+let p=m.f,n=b[p];b[p]=0;sn(p,n,'pick');
+for(let g=0;g++<400;){while(n>0){p=(p+d+12)%12;b[p]++;n--;sn(p,n,'drop')}
+let a=(p+d+12)%12;if(b[a]+q[a]>0){if(a%6){p=a;n=b[a];b[a]=0;sn(p,n,'pick');continue}break}
+for(;;){const x=(a+d+12)%12;if(b[x]+q[x]==0)break;const gn=b[x]+10*q[x];sn(x,0,'mark',[x],gn);sc[s]+=gn;b[x]=0;q[x]=0;sn(x,0,'cap',[x],gn);a=(x+d+12)%12;if(b[a]+q[a]>0)break}
+break}
+return F};
+const _dm=doMove,T={pick:650,drop:420,mark:650,cap:950};
+doMove=function(m){const r=R;if(!r||r.G.id!='oq')return _dm(m);if(r.busy)return;
+const S0=r.S,fin=r.G.play(S0,m),F=tr(S0,m),sp=+$('#oqv').value||1;let k=0;r.ui={sel:null};r.busy=1;$('#rs').disabled=true;
+const step=()=>{if(R!==r||(r.S.over&&k)){$('#rs').disabled=false;return}
+if(k>=F.length){r.busy=0;$('#rs').disabled=false;r.S=fin;r.anim=0;draw();return fin.over?endGame():botGo(500)}
+const f=F[k++];r.S={...fin,over:null,turn:S0.turn,last:null,b:Int8Array.from(f.b),q:Uint8Array.from(f.q),sc:f.sc,fr:f};draw();setTimeout(step,T[f.t]*sp)};
+step()};
+$('#bd').addEventListener('click',e=>{if(R&&R.busy)e.stopImmediatePropagation()},true);
+$('.st').insertAdjacentHTML('beforeend','<label>Tốc độ rải Ô ăn quan<select id="oqv"><option value="1.6">Chậm<option value="1" selected>Vừa<option value=".55">Nhanh</select></label>');
+}catch(e){console.error(e)}
+
+/* ===== 2. Cờ shogi 9×9 (phong cấp, thả quân, chiếu bí) ===== */
+try{Games.sg=(()=>{
+const GL=['','歩','香','桂','銀','金','角','飛','王','と','杏','圭','全','','馬','龍'],PR=[0,9,10,11,12,0,14,15,0],
+VV=[0,100,300,320,450,500,800,1000,0,420,480,480,500,0,1000,1200],
+GD=[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,0]],KG=[[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]],DG=[[-1,-1],[-1,1],[1,-1],[1,1]],OR=[[-1,0],[1,0],[0,-1],[0,1]],
+MV=[0,{st:[[-1,0]],sl:[]},{st:[],sl:[[-1,0]]},{st:[[-2,-1],[-2,1]],sl:[]},{st:[[-1,-1],[-1,0],[-1,1],[1,-1],[1,1]],sl:[]},{st:GD,sl:[]},{st:[],sl:DG},{st:[],sl:OR},{st:KG,sl:[]}];
+MV[9]=MV[10]=MV[11]=MV[12]={st:GD,sl:[]};MV[14]={st:OR,sl:DG};MV[15]={st:DG,sl:OR};
+const SV=[],SL=[],reg=(L,a,b,t)=>{let e=L.find(x=>x[0]==a&&x[1]==b);if(!e)L.push(e=[a,b,new Uint8Array(16)]);e[2][t]=1};
+MV.forEach((m,t)=>{if(!m)return;m.st.forEach(([a,b])=>reg(SV,a,b,t));m.sl.forEach(([a,b])=>reg(SL,a,b,t))});
+const att=(b,q,by)=>{const r=q/9|0,c=q%9;
+for(const[a,d,f]of SV){const rr=r-by*a,cc=c-d;if(rr<0||rr>8||cc<0||cc>8)continue;const v=b[rr*9+cc];if(v*by>0&&f[v*by])return 1}
+for(const[a,d,f]of SL){let rr=r-by*a,cc=c-d;while(rr>=0&&rr<9&&cc>=0&&cc<9){const v=b[rr*9+cc];if(v){if(v*by>0&&f[v*by])return 1;break}rr-=by*a;cc-=d}}
+return 0};
+const pseudo=S=>{const b=S.b,t0=S.turn,s=t0?-1:1,h=S.h[t0],o=[],zn=r=>s>0?r<3:r>5,l1=r=>s>0?r==0:r==8,l2=r=>s>0?r<2:r>6;
+for(let i=0;i<81;i++){const v=b[i]*s;if(v<=0)continue;const r=i/9|0,c=i%9,m=MV[v],
+add=(j,rr)=>{if(v<8&&v!=5&&(zn(r)||zn(rr))){const f=(v<3&&l1(rr))||(v==3&&l2(rr));o.push({f:i,t:j,pr:1});if(!f)o.push({f:i,t:j,pr:0})}else o.push({f:i,t:j,pr:0})};
+for(const[a,d]of m.st){const rr=r+s*a,cc=c+d;if(rr<0||rr>8||cc<0||cc>8)continue;const j=rr*9+cc;if(b[j]*s<=0)add(j,rr)}
+for(const[a,d]of m.sl){let rr=r+s*a,cc=c+d;while(rr>=0&&rr<9&&cc>=0&&cc<9){const j=rr*9+cc;if(b[j]*s>0)break;add(j,rr);if(b[j])break;rr+=s*a;cc+=d}}}
+for(let t=1;t<8;t++){if(!h[t])continue;let nf=null;if(t==1){nf=new Uint8Array(9);for(let i=0;i<81;i++)if(b[i]==s)nf[i%9]=1}
+for(let j=0;j<81;j++){if(b[j])continue;const rw=j/9|0;if((t<3&&l1(rw))||(t==3&&l2(rw)))continue;if(t==1&&nf[j%9])continue;o.push({f:null,t:j,d:t,pr:0})}}
+return o};
+const pmate=(S,m)=>{const s=S.turn?-1:1,b=S.b.slice();b[m.t]=s;if(!att(b,S.ks[1-S.turn],s))return 0;
+const X={b,h:S.h.map((a,i)=>{if(i!=S.turn)return a;a=a.slice();a[1]--;return a}),ks:S.ks,turn:1-S.turn,chk:1};return!legal(X,1).length};
+const legal=(S,skip)=>{const t0=S.turn,s=t0?-1:1,ks=S.ks[t0],chk=S.chk??att(S.b,ks,-s),o=[];
+for(const m of pseudo(S)){let ok=1;
+if(m.f==null){if(chk){const b=S.b.slice();b[m.t]=s*m.d;ok=!att(b,ks,-s)}if(ok&&m.d==1&&!skip&&pmate(S,m))ok=0}
+else{const b=S.b.slice(),v=b[m.f];b[m.t]=m.pr?s*PR[v*s]:v;b[m.f]=0;ok=!att(b,v*s==8?m.t:ks,-s)}
+if(ok)o.push(m)}
+for(const m of o){const q=Math.abs(S.b[m.t]);m.o=(q?VV[q]*4-(m.f==null?0:VV[Math.abs(S.b[m.f])])/8:0)+(m.pr?300:0)}
+return o.sort((a,b)=>b.o-a.o)};
+const ap=(S,m)=>{const b=S.b.slice(),h=[S.h[0].slice(),S.h[1].slice()],ks=S.ks.slice(),s=S.turn,sg=s?-1:1;
+if(m.f==null){b[m.t]=sg*m.d;h[s][m.d]--}
+else{let v=b[m.f]*sg;const q=Math.abs(b[m.t]);if(q)h[s][q>8?q-8:q]++;if(m.pr)v=PR[v];b[m.t]=sg*v;b[m.f]=0;if(v==8)ks[s]=m.t}
+return{b,h,ks}};
+const G={id:'sg',name:'Cờ shogi',ico:'将',color:'#9a3412',tag:'Nhật Bản · 9×9 · thả quân',desc:'Cờ tướng Nhật: quân ăn được về tay bạn và thả lại bàn cờ. Có phong cấp (成), chiếu bí.',sides:['Tiên','Hậu'],cols:['#f4dca6','#8a5a2b'],
+rules:['Bàn 9×9, mỗi bên 20 quân: Vua 王, Xe 飛, Tượng 角, 2 Kim 金, 2 Ngân 銀, 2 Mã 桂, 2 Hương 香, 9 Tốt 歩. Bên Tiên đi trước (quân hướng lên).','Quân bị ăn trở thành quân trong tay bạn: chạm quân ở khay (trên/dưới bàn) rồi chạm ô trống để thả xuống, tính là 1 nước đi. Không thả Tốt vào cột đã có Tốt của mình, không thả quân vào ô mà nó không còn nước đi, không thả Tốt để chiếu bí.','Quân đi vào, đi ra hoặc đi trong 3 hàng đầu của đối phương được phong cấp (hiện bảng chọn): đổi sang mặt chữ đỏ mạnh hơn. Tốt/Hương tới hàng cuối và Mã tới 2 hàng cuối bắt buộc phong. Kim và Vua không phong.','Chiếu bí Vua đối phương để thắng. Lặp thế 4 lần hoặc quá 400 nước thì hòa.'],
+init(){const b=new Int8Array(81),bk=[2,3,4,5,8,5,4,3,2];for(let c=0;c<9;c++){b[c]=-bk[c];b[18+c]=-1;b[54+c]=1;b[72+c]=bk[c]}b[10]=-7;b[16]=-6;b[64]=6;b[70]=7;
+const h=[new Uint8Array(8),new Uint8Array(8)];return{b,h,ks:[76,4],turn:0,last:null,over:null,n:0,chk:false,keys:[b.join()+'0'+h[0]+h[1]]}},
+moves:S=>S._ms||(S._ms=legal(S)),own:(S,i)=>S.b[i]*(S.turn?-1:1)>0,
+click(S,ui,i){ui.promo=null;const s=S.turn;
+if(i>=100){const sd=(i-100)/10|0,t=(i-100)%10;ui.sel=sd==s&&S.h[s][t]?100+t:null;return}
+if(ui.sel!=null){const sel=ui.sel,mm=G.moves(S).filter(m=>sel>=100?m.f==null&&m.d==sel-100&&m.t==i:m.f===sel&&m.t==i);
+if(mm.length){ui.sel=null;if(mm.length>1){ui.promo=mm.sort((a,b)=>b.pr-a.pr);return}return mm[0]}}
+ui.sel=S.b[i]*(s?-1:1)>0?i:null},
+play(S,m){const s=S.turn,t=1-s,A=ap(S,m),X={b:A.b,h:A.h,ks:A.ks,turn:t,last:{f:m.f,t:m.t},over:null,n:S.n+1,keys:S.keys.concat(A.b.join()+t+A.h[0]+A.h[1])};
+X.chk=!!att(X.b,X.ks[t],s?-1:1);
+if(X.chk){X._ms=legal(X);if(!X._ms.length)X.over={w:s,why:'Chiếu bí!'}}
+if(!X.over){const k=X.keys[X.keys.length-1];if(X.keys.filter(x=>x==k).length>=4)X.over={w:null,why:'Hòa: lặp lại thế cờ 4 lần'};else if(X.n>=400)X.over={w:null,why:'Hòa: quá 400 nước'}}
+return X},
+ev(S){let v=0;const b=S.b;for(let i=0;i<81;i++){const p=b[i];if(!p)continue;const a=Math.abs(p),sg=p>0?1:-1,r=i/9|0;let x=VV[a];if(a==1)x+=(sg>0?6-r:r-2)*6;if(a==8)x+=(sg>0?r:8-r)*6;v+=sg*x}
+for(let t=1;t<8;t++)v+=(S.h[0][t]-S.h[1][t])*VV[t]*1.1;return S.turn?-v:v},
+bot:(S,lv)=>pbot(G,S,lv,[1,2,2],70),status:S=>S.chk?'Chiếu! ':'',info:(S,side)=>S.h[side].reduce((a,x)=>a+x,0)+' quân tay',gl:(t,p)=>GL[p?PR[t]:t],
+view(S,ui,o){const CS=64,M=30,HR=84,W=9*CS+2*M,H=2*HR+2*M+9*CS,fl=!!o.flip,X0=M,Y0=HR+M,px=i=>{let r=i/9|0,c=i%9;if(fl){r=8-r;c=8-c}return[X0+c*CS+CS/2,Y0+r*CS+CS/2]},sel=ui.sel,
+ms=sel==null?[]:G.moves(S).filter(m=>sel>=100?m.f==null&&m.d==sel-100:m.f===sel),
+PTS=k=>[[0,-29],[19,-19],[25,27],[-25,27],[-19,-19]].map(([x,y])=>x*k+','+y*k).join(' '),
+pc=(x,y,k,rot,g,pro)=>`<g transform="translate(${x} ${y})${rot?' rotate(180)':''}"><polygon points="${PTS(k)}" class="sgp"/><text y="${2*k}" class="sgt${pro?' pro':''}" font-size="${30*k}">${g}</text></g>`;
+let g='',st='',hl='',pcs='',hit='',lab='';
+for(let k=0;k<=9;k++)g+=`M${X0} ${Y0+k*CS}H${X0+9*CS}M${X0+k*CS} ${Y0}V${Y0+9*CS}`;
+for(const[a,c]of[[3,3],[3,6],[6,3],[6,6]])st+=`<circle cx="${X0+c*CS}" cy="${Y0+a*CS}" r="4" class="star"/>`;
+for(let i=0;i<81;i++){const[x,y]=px(i),v=S.b[i],bx=`x="${x-CS/2}" y="${y-CS/2}" width="${CS}" height="${CS}"`;
+if(S.last&&(S.last.f===i||S.last.t===i))hl+=`<rect ${bx} class="hl-last"/>`;
+if(sel===i)hl+=`<rect ${bx} class="hl-sel"/>`;
+if(S.chk&&v==(S.turn?-8:8))hl+=`<circle cx="${x}" cy="${y}" r="${CS*.5}" class="hl-chk"/>`;
+if(v){const a=Math.abs(v),sd=v>0?0:1;pcs+=`<g${slideStyle(o,S.last,i,px)}>${pc(x,y,1,(sd==1)!=fl,a==8&&sd?'玉':GL[a],a>8)}</g>`}
+hit+=`<rect ${bx} fill="transparent" data-i="${i}"/>`}
+for(const[sd,cy]of[[fl?0:1,HR/2],[fl?1:0,H-HR/2]]){const rot=(sd==1)!=fl;
+[7,6,5,4,3,2,1].forEach((t,k)=>{const x=X0+(k+.5)*CS*9/7,n=S.h[sd][t],me=sd==S.turn,by=cy+(rot?-1:1)*CS*.3;
+if(me&&sel===100+t)hl+=`<rect x="${x-CS*.58}" y="${cy-CS*.58}" width="${CS*1.16}" height="${CS*1.16}" rx="10" class="hl-sel"/>`;
+pcs+=`<g opacity="${n?1:.2}">${pc(x,cy,.8,rot,GL[t],0)}</g>`;
+if(n>1)pcs+=`<circle cx="${x+CS*.34}" cy="${by}" r="11" class="sgn"/><text x="${x+CS*.34}" y="${by+1}" class="sgc">${n}</text>`;
+if(me&&n&&!S.over)hit+=`<rect x="${x-CS*.6}" y="${cy-CS*.6}" width="${CS*1.2}" height="${CS*1.2}" fill="transparent" data-i="${100+sd*10+t}"/>`})}
+const ht=[...new Set(ms.map(m=>m.t))].map(t=>dot(px,t,S.b[t],9)).join('');
+for(let k=0;k<9;k++){const q=fl?8-k:k;lab+=`<text x="${X0+k*CS+CS/2}" y="${Y0-14}" class="coord">${9-q}</text><text x="${X0+9*CS+17}" y="${Y0+k*CS+CS/2+1}" class="coord">${'一二三四五六七八九'[q]}</text>`}
+return{w:W,h:H,svg:`<rect x="2" y="2" width="${W-4}" height="${H-4}" rx="14" class="frame"/><rect x="${X0-6}" y="${Y0-6}" width="${9*CS+12}" height="${9*CS+12}" rx="8" class="bg"/><path d="${g}" class="gl"/>${st}${hl}${lab}${pcs}${ht}${hit}`}}};
+return G})();LIST.push(Games.sg)}catch(e){console.error(e)}
+
+/* ===== 3. Ngẫu nhiên: ván, kiểu bàn, quân cờ, bản đồ Nối ô, cỡ cờ vây ===== */
+const _d3=draw;draw=function(){_d3();try{const r=R;if(!r)return;
+if(r.busy&&r.S.fr&&!r.S.over)$('#st').textContent={pick:'🤲 Bốc quân lên tay…',drop:'🤲 Đang rải quân…',mark:'🎯 Ăn quân!',cap:'🎯 Ăn được '+r.S.fr.g+' điểm!'}[r.S.fr.t];
+if(r.G.id=='sg'&&r.ui.promo)document.querySelectorAll('#pr button').forEach(b=>{const m=r.ui.promo[+b.dataset.k];b.textContent=Games.sg.gl(Math.abs(r.S.b[m.f]),m.pr)})}catch(e){console.error(e)}};
+try{const RV={};
+theme=function(){const r=document.documentElement.style,pk=(id,a)=>{const v=$('#'+id).value;return v=='r'?(RV[id]??(RV[id]=Math.random()*a.length|0)):+v},b=BT[pk('bt',BT)],c=CP[pk('cp',CP)],x=XP[pk('xp',XP)];
+[['sq1',b[1]],['sq2',b[2]],['fr',b[3]],['fs',b[4]],['xb',b[5]],['xs',b[6]],['wd',b[7]],['cw',c[1]],['cws',c[2]],['cb',c[3]],['cbs',c[4]],['x0',x[1]],['x1',x[2]],['xd',x[3]]].forEach(([k,v])=>r.setProperty('--'+k,v))};
+['bt','cp','xp','dm','gs'].forEach(id=>{const e=$('#'+id);e.insertAdjacentHTML('beforeend','<option value="r">🎲 Ngẫu nhiên</option>');if(ld(id)=='r')e.value='r'});
+const _og=openGame;
+openGame=function(G,seat){for(const k in RV)delete RV[k];const rs=['dm','gs'].filter(id=>$('#'+id).value=='r'),old={};
+rs.forEach(id=>{const s=$('#'+id);old[id]=s.value;s.value=s.options[Math.random()*(s.options.length-1)|0].value});theme();
+try{_og(G,seat)}finally{rs.forEach(id=>$('#'+id).value=old[id])}};
+theme();
+$('#cards').innerHTML=LIST.map((G,k)=>`<button class="card" style="--c:${G.color}" data-k="${k}"><span class="ico">${G.ico}</span><b>${G.name}</b><small>${G.tag}</small><p>${G.desc}</p></button>`).join('')+`<button class="card" style="--c:#7c3aed" data-k="-1"><span class="ico">🎲</span><b>Ngẫu nhiên</b><small>Không cần chọn</small><p>Máy bốc ngẫu nhiên một trò chơi cho bạn. Kiểu bàn, quân cờ, bản đồ để chế độ 🎲 cũng được đổi mỗi ván.</p></button>`;
+$('#cards').onclick=e=>{const b=e.target.closest('[data-k]');if(!b)return;TR=null;let k=+b.dataset.k;if(k<0)k=Math.random()*LIST.length|0;openGame(LIST[k],[0,1])};
+}catch(e){console.error(e)}
+})();</script>
+</body></html>
+
