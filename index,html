@@ -1328,5 +1328,176 @@ q('#lu-ov').onclick=e=>{const a=e.target.dataset.a;if(!a)return;
 })();
 
 </script>
+<script>
+/* ===== ADD-ON 6 Cờ Quán: HỎI CÀI ĐẶT KHI CHỌN GAME · PHÒNG ONLINE (MÃ PHÒNG) · CARO VÔ HẠN + ZOOM =====
+   CÁCH DÙNG: dán nguyên khối này (kể cả thẻ script) ngay trên </body>, SAU add-on 5. Không sửa add-on cũ.
+   Online dùng PeerJS (tải từ cdn.jsdelivr.net, máy chủ báo hiệu miễn phí của PeerJS) nên trang phải chạy trên web của bạn (GitHub Pages, Netlify...). ===== */
+(()=>{
+const AL='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',O={on:0,peer:null,conn:null,side:0,hs:null,host:0,code:'',k:0,rn:null,to:0},bd=$('#bd');
+let ctx={k:0,tn:0},dragged=0;
+document.head.insertAdjacentHTML('beforeend',`<style>
+.st{display:none!important}
+#o6{position:fixed;inset:0;display:grid;place-items:center;background:#000b;z-index:30;padding:12px}
+#o6 .pn{width:min(94vw,440px);text-align:left;display:grid;gap:10px;max-height:92dvh;overflow:auto}
+#o6 h2{margin:0;font-size:20px;text-transform:none;letter-spacing:0;color:var(--tx)}#o6 p{margin:0}
+#o6 .sr{display:flex;justify-content:space-between;align-items:center;gap:10px}
+#o6 input[type=number]{width:110px;padding:7px 10px;border-radius:10px;border:1px solid var(--ln);background:var(--pn);color:var(--tx);font:inherit}
+#o6 .row{display:flex;gap:8px;flex-wrap:wrap}#o6 .row button{flex:1 1 140px}
+#o6 .code{font:800 36px/1 monospace;letter-spacing:.25em;text-align:center;padding:12px;border:2px dashed var(--ln);border-radius:12px;background:var(--pn);user-select:all}
+#o6 input.ci{width:100%;font:800 28px monospace;text-align:center;text-transform:uppercase;letter-spacing:.2em;padding:10px;border-radius:12px;border:2px solid var(--ln);background:var(--pn);color:var(--tx)}
+#cz6{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}#cz6 button{padding:8px 16px}#cz6 small{color:var(--mu)}
+#bd.cz{touch-action:none;cursor:grab}
+.g-caro .cvoid{fill:#cdbf99}.g-caro .cb{fill:#fbf6e6}
+#tt6{position:fixed;left:50%;bottom:18px;translate:-50% 0;background:#111d;color:#fff;padding:10px 16px;border-radius:999px;z-index:40;font-weight:700;max-width:92vw;text-align:center}
+</style>`);
+document.body.insertAdjacentHTML('beforeend','<div id="o6" hidden></div>');
+$('#st').insertAdjacentHTML('beforebegin','<div id="cz6" hidden><button class="gh" id="zo6" title="Thu nhỏ">➖</button><button class="gh" id="zi6" title="Phóng to">➕</button><button class="gh" id="zc6" title="Về nước vừa đi">🎯</button><small id="zt6"></small></div>');
+$('#th').insertAdjacentHTML('beforebegin','<button class="gh" id="ap6">🎨 Giao diện</button>');
+$('#home').insertAdjacentHTML('beforeend','<h2>Online cùng bạn bè</h2><div class="tr"><button id="jn6">🔑 Vào phòng bằng mã</button></div><p class="note">Muốn tạo phòng: bấm vào một trò chơi ở trên → “🌐 Tạo phòng online”, rồi gửi mã phòng cho bạn.</p>');
+
+const send=x=>{try{O.conn&&O.conn.open&&O.conn.send(JSON.stringify(x))}catch(e){}},
+md=h=>{const e=$('#o6');e.innerHTML='<div class="pn">'+h+'</div>';e.hidden=0},ovx6=()=>{$('#o6').hidden=1},
+err=t=>`<h2>⚠️ Lỗi</h2><p>${t}</p><button data-a="x">Đóng</button>`,
+toast=t=>{let e=$('#tt6');if(!e){document.body.insertAdjacentHTML('beforeend','<div id="tt6" hidden></div>');e=$('#tt6')}e.textContent=t;e.hidden=0;clearTimeout(e._t);e._t=setTimeout(()=>e.hidden=1,3200)},
+ser=o=>JSON.stringify(o,(k,v)=>ArrayBuffer.isView(v)?{$t:v.constructor.name,a:Array.from(v)}:k[0]=='_'?undefined:v),
+rev=s=>JSON.parse(s,(k,v)=>v&&v.$t?self[v.$t].from(v.a):v),
+seed=s=>{if(!O.rn)O.rn=Math.random;let a=s>>>0;Math.random=()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}},
+mir=(i,l,c='')=>{const e=$('#'+i);return`<label class="sr ${c}"><span>${l}</span><select data-m="${i}">${[...e.options].map(o=>`<option value="${o.value}"${o.value==e.value?' selected':''}>${o.text}</option>`).join('')}</select></label>`},
+vis=()=>{const o=$('#o').value;document.querySelectorAll('#o6 .vb').forEach(e=>e.hidden=o!='1');document.querySelectorAll('#o6 .hv').forEach(e=>e.hidden=o!='0')};
+
+/* ================= CỜ CARO: bàn tùy chọn / vô hạn, zoom, kéo ================= */
+const K=1e6,W2=2*K,key=(r,c)=>(r+K)*W2+c+K,rc=i=>[Math.floor(i/W2)-K,i%W2-K],DR=[[0,1],[1,0],[1,1],[1,-1]],TB=[0,1,10,100,1e3],
+inb=(S,r,c)=>!S.n||r>=0&&r<S.n&&c>=0&&c<S.n,
+ln=(S,r,c,p,dr,dc)=>{let n=1,e=0;for(const s of[1,-1]){let y=r+dr*s,x=c+dc*s;while(inb(S,y,x)&&S.b[key(y,x)]===p){n++;y+=dr*s;x+=dc*s}if(inb(S,y,x)&&!S.b[key(y,x)])e++}return[n,e]},
+sc=(n,e,k)=>n>=k?1e5:e?TB[Math.max(0,Math.min(4,n+5-k))]*(e==2?10:1):0,
+pv=(S,r,c,p)=>DR.reduce((a,[d,e])=>{const[n,x]=ln(S,r,c,p,d,e);return a+sc(n,x,S.k)},0),
+cells=(S,r,c,p,dr,dc)=>{const o=[key(r,c)];for(const s of[1,-1]){let y=r+dr*s,x=c+dc*s;while(inb(S,y,x)&&S.b[key(y,x)]===p){o.push(key(y,x));y+=dr*s;x+=dc*s}}return o},
+vmax=S=>S.n?Math.max(S.n+2,8):100,
+fx=x=>Math.round(x*10)/10;
+let cam={R:null,x:.5,y:.5,v:15};
+const camReset=S=>{const n=S.n;cam={R,x:n?n/2:.5,y:n?n/2:.5,v:n?(n<=19?n+1:19):15}},
+clampCam=S=>{cam.v=Math.max(4,Math.min(vmax(S),cam.v));if(S.n){cam.x=Math.max(-1,Math.min(S.n+1,cam.x));cam.y=Math.max(-1,Math.min(S.n+1,cam.y))}};
+Games.caro=(()=>{const G={id:'caro',name:'Cờ caro',ico:'✕',color:'#2563eb',tag:'Nhanh · bàn tùy chọn · ♾️ vô hạn',desc:'Xếp liền 5 quân (ngang, dọc, chéo) trước thì thắng. Chọn cỡ bàn bất kỳ hoặc bàn vô hạn, có phóng to / thu nhỏ.',sides:['X','O'],cols:['#d6402f','#2563eb'],noflip:1,cfg:{n:15,k:5},
+rules:['X đi trước, hai bên luân phiên đánh vào một ô trống.','Ai tạo được hàng liền nhau (mặc định 5 quân, chọn được 3–7) theo ngang, dọc hoặc chéo trước là thắng.','Chọn cỡ bàn ở hộp cài đặt: từ 5×5 đến 1000×1000, hoặc ♾️ Vô hạn (bàn mở rộng mãi, không có biên).','Trong ván: kéo để di chuyển bàn, lăn chuột / chụm hai ngón / nút ➕➖ để phóng to thu nhỏ, nút 🎯 về nước vừa đi.','Bàn có biên mà đầy chưa ai thắng thì hòa.'],
+init:()=>({b:{},n:G.cfg.n,k:G.cfg.k,turn:0,cnt:0,last:null,over:null,win:null}),
+moves:()=>[],own:()=>0,click(S,ui,i){const[r,c]=rc(i);return S.b[i]||!inb(S,r,c)?0:{f:null,t:i}},
+play(S,m){const[r,c]=rc(m.t),p=S.turn+1,b={...S.b};b[m.t]=p;const N={b,n:S.n,k:S.k,turn:1-S.turn,last:{f:null,t:m.t},cnt:S.cnt+1,over:null,win:null};
+for(const[d,e]of DR)if(ln(N,r,c,p,d,e)[0]>=S.k){N.win=cells(N,r,c,p,d,e);N.over={w:S.turn,why:`Đủ ${S.k} quân liền nhau!`};break}
+if(!N.over&&S.n&&N.cnt>=S.n*S.n)N.over={w:null,why:'Bàn đầy – hòa'};return N},
+bot(S,lv){const p=S.turn+1,o=3-p,nz=[2e3,200,0][lv-1],m0=S.n?S.n>>1:0;if(!S.cnt)return{f:null,t:key(m0,m0)};const cd=new Set;
+for(const i in S.b){const[r,c]=rc(+i);for(let y=r-2;y<=r+2;y++)for(let x=c-2;x<=c+2;x++)if(inb(S,y,x)&&!S.b[key(y,x)])cd.add(key(y,x))}
+let best=null,bv=-1;for(const i of cd){const[r,c]=rc(i),v=pv(S,r,c,p)*1.1+pv(S,r,c,o)+Math.random()*nz;if(v>bv){bv=v;best={f:null,t:i}}}return best||{f:null,t:key(m0,m0)}},
+status:S=>S.n?'':'Bàn vô hạn · ',info:(S,side)=>side?'◯':'✕',
+view(S,ui,o){if(cam.R!==R)camReset(S);
+if(o.anim&&S.last){const[lr,lc]=rc(S.last.t),v=cam.v,L=cam.x-v/2,T=cam.y-v/2;if(lc<L+.5||lc>L+v-1.5||lr<T+.5||lr>T+v-1.5){cam.x=lc+.5;cam.y=lr+.5}}
+clampCam(S);const Wd=700,v=cam.v,CS=Wd/v,L=cam.x-v/2,T=cam.y-v/2,c0=Math.floor(L),c1=Math.ceil(L+v),r0=Math.floor(T),r1=Math.ceil(T+v),n=S.n,X=c=>fx((c-L)*CS),Y=r=>fx((r-T)*CS);
+const ca=n?Math.max(c0,0):c0,cb=n?Math.min(c1,n):c1,ra=n?Math.max(r0,0):r0,rb=n?Math.min(r1,n):r1;let g='',s='';
+for(let c=ca;c<=cb;c++)g+=`M${X(c)} ${Y(ra)}V${Y(rb)}`;for(let r=ra;r<=rb;r++)g+=`M${X(ca)} ${Y(r)}H${X(cb)}`;
+const bx=(r,c,k)=>`<rect x="${X(c)}" y="${Y(r)}" width="${fx(CS)}" height="${fx(CS)}" class="${k}"/>`;
+if(S.win)for(const i of S.win){const[r,c]=rc(i);s+=bx(r,c,'hl-sel')}
+if(S.last){const[r,c]=rc(S.last.t);s+=bx(r,c,'hl-last')}
+const sw=Math.max(2.5,CS*.12);
+for(const i in S.b){const[r,c]=rc(+i);if(c<c0-1||c>c1||r<r0-1||r>r1)continue;const x=fx(X(c)+CS/2),y=fx(Y(r)+CS/2),a=o.anim&&S.last&&S.last.t==i?' pp':'';
+if(S.b[i]==1){const d=fx(CS*.28);s+=`<path class="mx${a}" style="stroke-width:${sw}" d="M${x-d} ${y-d}L${x+d} ${y+d}M${x+d} ${y-d}L${x-d} ${y+d}"/>`}else s+=`<circle class="mo${a}" style="stroke-width:${sw}" cx="${x}" cy="${y}" r="${fx(CS*.31)}"/>`}
+return{w:Wd,h:Wd,svg:`<defs><clipPath id="cpc"><rect x="2" y="2" width="696" height="696" rx="14"/></clipPath></defs><g clip-path="url(#cpc)"><rect width="700" height="700" class="${n?'cvoid':'cb'}"/>${n?`<rect x="${X(0)}" y="${Y(0)}" width="${fx(n*CS)}" height="${fx(n*CS)}" class="cb"/>`:''}<path d="${g}" class="gl2"/>${s}</g><rect x="2" y="2" width="696" height="696" rx="14" class="paper" style="fill:none"/>`}}};
+try{const j=JSON.parse(localStorage.getItem('cq_caro'));if(j&&j.n>=0&&j.k>=3)G.cfg=j}catch(e){}return G})();
+{const old=LIST.indexOf(LIST.find(g=>g.id=='caro'));if(old>=0){LIST[old]=Games.caro;const cd=$('#cards [data-k="'+old+'"]');if(cd){cd.querySelector('small').textContent=Games.caro.tag;cd.querySelector('p').textContent=Games.caro.desc}}}
+
+const cellAt=e=>{const r=$('#bd svg').getBoundingClientRect(),a=(e.clientX-r.left)/r.width,b=(e.clientY-r.top)/r.height;return a<0||a>1||b<0||b>1?null:key(Math.floor(cam.y-cam.v/2+b*cam.v),Math.floor(cam.x-cam.v/2+a*cam.v))},
+zoomAt=(f,cx,cy)=>{const S=R.S,r=$('#bd svg').getBoundingClientRect(),a=(cx-r.left)/r.width-.5,b=(cy-r.top)/r.height-.5,px=cam.x+a*cam.v,py=cam.y+b*cam.v;cam.v*=f;clampCam(S);cam.x=px-a*cam.v;cam.y=py-b*cam.v;clampCam(S)},
+zc=f=>{if(!R||R.G.id!='caro')return;const r=$('#bd svg').getBoundingClientRect();zoomAt(f,r.left+r.width/2,r.top+r.height/2);draw()};
+$('#zi6').onclick=()=>zc(1/1.3);$('#zo6').onclick=()=>zc(1.3);
+$('#zc6').onclick=()=>{if(!R||R.G.id!='caro')return;const S=R.S;if(S.last){const[r,c]=rc(S.last.t);cam.x=c+.5;cam.y=r+.5}else camReset(S);draw()};
+const pts=new Map;let lastD=0,mv0=null,raf=0;
+const dist=()=>{const a=[...pts.values()];return Math.hypot(a[0][0]-a[1][0],a[0][1]-a[1][1])},
+redraw=()=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=0;if(R&&R.G.id=='caro')draw()})};
+bd.addEventListener('pointerdown',e=>{if(!R||R.G.id!='caro')return;pts.set(e.pointerId,[e.clientX,e.clientY]);if(pts.size==1){dragged=0;mv0=[e.clientX,e.clientY]}if(pts.size==2){dragged=1;lastD=dist()}});
+addEventListener('pointermove',e=>{if(!pts.has(e.pointerId)||!R||R.G.id!='caro')return;const old=pts.get(e.pointerId),w=$('#bd svg').getBoundingClientRect().width;pts.set(e.pointerId,[e.clientX,e.clientY]);
+if(pts.size==1){if(!dragged&&Math.hypot(e.clientX-mv0[0],e.clientY-mv0[1])<7)return;dragged=1;cam.x-=(e.clientX-old[0])/w*cam.v;cam.y-=(e.clientY-old[1])/w*cam.v;clampCam(R.S);redraw()}
+else if(pts.size==2){const d=dist(),a=[...pts.values()];if(lastD>0)zoomAt(lastD/d,(a[0][0]+a[1][0])/2,(a[0][1]+a[1][1])/2);lastD=d;redraw()}});
+const up=e=>{pts.delete(e.pointerId);if(pts.size<2)lastD=0};addEventListener('pointerup',up);addEventListener('pointercancel',up);
+bd.addEventListener('wheel',e=>{if(!R||R.G.id!='caro')return;e.preventDefault();zoomAt(e.deltaY>0?1.12:1/1.12,e.clientX,e.clientY);draw()},{passive:false});
+/* chặn / xử lý click: lượt online + caro (không dùng ô hit, tính ô theo vị trí con trỏ) */
+bd.addEventListener('click',e=>{if(!R)return;if(O.on&&R.S.turn!==O.side&&!R.S.over){e.stopImmediatePropagation();return}
+if(R.G.id=='caro'){e.stopImmediatePropagation();if(dragged){dragged=0;return}if(R.S.over||isBot())return;const i=cellAt(e);if(i==null)return;const m=R.G.click(R.S,R.ui,i);if(m)doMove(m)}},true);
+
+/* ================= Hộp hỏi cài đặt khi chọn game ================= */
+const caroUI=()=>{const c=Games.caro.cfg,pre=[10,15,20,30,50,100],cu=c.n&&!pre.includes(c.n);
+return`<label class="sr"><span>🗺️ Cỡ bàn</span><select id="cs6">${pre.map(n=>`<option value="${n}"${c.n==n?' selected':''}>${n}×${n}</option>`).join('')}<option value="0"${c.n?'':' selected'}>♾️ Vô hạn (mở rộng mãi)</option><option value="c"${cu?' selected':''}>✏️ Tùy chọn…</option></select></label>
+<label class="sr" id="cr6"${cu?'':' hidden'}><span>Số ô mỗi cạnh (5–1000)</span><input type="number" id="cn6" min="5" max="1000" value="${cu?c.n:25}"></label>
+<label class="sr"><span>🎯 Số quân liền để thắng</span><select id="ck6">${[3,4,5,6,7].map(k=>`<option value="${k}"${c.k==k?' selected':''}>${k} quân</option>`).join('')}</select></label>
+<small class="note">Trong ván: kéo để di chuyển, lăn chuột / chụm 2 ngón / nút ➕➖ để phóng to thu nhỏ.</small>`};
+function applyCaro(){const s=$('#cs6');if(!s)return;let n=s.value=='c'?Math.max(5,Math.min(1000,+$('#cn6').value||25)):+s.value;Games.caro.cfg={n,k:+$('#ck6').value};try{localStorage.setItem('cq_caro',JSON.stringify(Games.caro.cfg))}catch(e){}}
+function setup(k,tn){ctx={k,tn};const G=tn?null:LIST[k],id=G?G.id:'';
+let h=`<h2>${tn?'🏆 Giải '+tn+' ván (ngẫu nhiên các game)':G.ico+' '+G.name}</h2>`+(G?`<small class="note">${G.desc}</small>`:'')+mir('o','Đối thủ')+mir('lv','Độ khó máy','vb')+mir('tm','Thời gian mỗi bên');
+if(!G||!G.noflip)h+=`<label class="sr hv"><span>Xoay bàn theo lượt (2 người)</span><input type="checkbox" data-c="fl"${$('#fl').checked?' checked':''}></label>`;
+if(id=='go')h+=mir('gs','Cỡ bàn cờ vây');if(id=='db')h+=mir('dm','Bản đồ Nối ô');if(id=='oq')h+=mir('oqv','Tốc độ rải quân');if(id=='caro')h+=caroUI();
+if(['chess','xq','jq','bq','go','ck','oq','sg'].includes(id))h+=mir('bt','Kiểu bàn');if(id=='chess')h+=mir('cp','Quân cờ vua');if(['xq','jq','bq'].includes(id))h+=mir('xp','Quân cờ tướng');
+h+=`<div class="row"><button data-a="play">▶ Chơi</button>${tn?'':'<button data-a="host">🌐 Tạo phòng online</button>'}</div>${tn?'':'<button class="gh" data-a="join">🔑 Vào phòng bằng mã</button>'}<button class="gh" data-a="x">Hủy</button>`;md(h);vis()}
+$('#cards').onclick=e=>{const b=e.target.closest('[data-k]');if(!b)return;let k=+b.dataset.k;if(k<0)k=Math.random()*LIST.length|0;setup(k)};
+$('#t3').onclick=()=>setup(0,3);$('#t5').onclick=()=>setup(0,5);
+$('#ap6').onclick=()=>md('<h2>🎨 Giao diện</h2>'+mir('bt','Kiểu bàn')+mir('cp','Quân cờ vua')+mir('xp','Quân cờ tướng')+'<button data-a="x">Xong</button>');
+$('#jn6').onclick=()=>askJoin();
+/* hỏi độ khó máy cho Cờ Tỷ Phú / Cờ Cá Ngựa (đã bỏ bảng cài đặt cũ) */
+['mo','lu'].forEach(p=>{const b=$('#'+p+'-go');if(b)b.addEventListener('click',()=>setTimeout(()=>{const pn=$('#'+p+'-ov .pn'),g=pn&&pn.querySelector('[data-a=go]');if(!g||pn.querySelector('#lvx'))return;g.insertAdjacentHTML('beforebegin',`<label class="sr" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span>🤖 Độ khó máy</span><select id="lvx">${[...$('#lv').options].map(o=>`<option value="${o.value}"${o.value==$('#lv').value?' selected':''}>${o.text}</option>`).join('')}</select></label>`);pn.querySelector('#lvx').onchange=e=>{$('#lv').value=e.target.value}},0))});
+$('#o6').onchange=e=>{const t=e.target,m=t.dataset.m;if(m){const s=$('#'+m);s.value=t.value;s.dispatchEvent(new Event('change'));if(m=='o')vis()}else if(t.dataset.c=='fl')$('#fl').checked=t.checked;else if(t.id=='cs6')$('#cr6').hidden=t.value!='c'};
+$('#o6').onclick=e=>{const a=e.target.dataset.a;if(!a)return;
+if(a=='x')return ovx6();
+if(a=='play'){applyCaro();ovx6();if(ctx.tn)return tour(ctx.tn);TR=null;return openGame(LIST[ctx.k],[0,1])}
+if(a=='host'){applyCaro();return hostRoom(ctx.k)}
+if(a=='join')return askJoin();
+if(a=='jgo')return joinRoom($('#jc').value);
+if(a=='copy'){try{navigator.clipboard.writeText(O.code);toast('Đã sao chép mã '+O.code)}catch(x){toast('Mã phòng: '+O.code)}return}
+if(a=='cancel'){leave6(false);ovx6()}};
+$('#o6').addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.id=='jc')joinRoom(e.target.value)});
+
+/* ================= Phòng online (PeerJS) ================= */
+const lp=()=>window.Peer?Promise.resolve():new Promise((ok,no)=>{const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js';s.onload=ok;s.onerror=()=>no(new Error('load'));document.head.appendChild(s)}),
+gen=()=>Array.from(crypto.getRandomValues(new Uint8Array(5)),b=>AL[b%AL.length]).join('');
+function leave6(bye){if(bye)send({t:'bye'});const p=O.peer,c=O.conn;setTimeout(()=>{try{c&&c.close()}catch(e){}try{p&&p.destroy()}catch(e){}},250);clearTimeout(O.to);O.conn=O.peer=null;O.on=0;O.hs=null;O.host=0;if(O.rn){Math.random=O.rn;O.rn=null}}
+function openOnline(k,st){O.on=1;const v={o:$('#o').value,t:$('#tm').value,f:$('#fl').checked};$('#o').value='0';$('#tm').value='0';$('#fl').checked=false;
+try{openGame(LIST[k],[0,1])}finally{$('#o').value=v.o;$('#tm').value=v.t;$('#fl').checked=v.f}R.eld=1;if(st){R.S=st;draw()}}
+function startHost(){O.hs=O.hs==null?crypto.getRandomValues(new Uint8Array(1))[0]&1:1-O.hs;O.side=O.hs;ovx6();$('#ov').hidden=1;openOnline(O.k);const sd=crypto.getRandomValues(new Uint32Array(1))[0];send({t:'start',k:O.k,hs:O.hs,sd,S:ser(R.S)});seed(sd)}
+function attach(c){O.conn=c;c.on('data',onData);c.on('close',onClose);c.on('error',onClose);
+const go=()=>{clearTimeout(O.to);if(O.host)startHost();else md(`<h2>✅ Đã vào phòng ${O.code}</h2><p>Đang chờ chủ phòng bắt đầu ván…</p><button class="gh" data-a="cancel">Thoát</button>`)};c.open?go():c.on('open',go)}
+function onData(d){let m;try{m=typeof d=='string'?JSON.parse(d):d}catch(e){return}
+if(m.t=='start'){O.k=m.k;O.hs=m.hs;O.side=1-m.hs;ovx6();$('#ov').hidden=1;openOnline(m.k,rev(m.S));seed(m.sd)}
+else if(m.t=='mv'&&O.on&&R&&!R.S.over)_dm(m.m);
+else if(m.t=='rs'&&O.on&&R&&!R.S.over){R.S.over={w:m.w,why:'Đối thủ đầu hàng'};endGame()}
+else if(m.t=='again'&&O.host){startHost()}
+else if(m.t=='full')md(err('Phòng đã đủ người.'));
+else if(m.t=='bye')onClose()}
+function onClose(){O.conn=null;if(O.on){toast('🔌 Bạn bè đã thoát hoặc mất kết nối');O.on=0;if(O.rn){Math.random=O.rn;O.rn=null}draw()}else if(!O.host&&O.peer&&!R)md(err('Mất kết nối với phòng.'))}
+async function hostRoom(k){O.k=k;const G=LIST[k];md('<h2>🌐 Đang tạo phòng…</h2>');
+try{await lp()}catch(e){return md(err('Không tải được PeerJS. Kiểm tra mạng, và trang phải chạy trên web của bạn (không bị chặn kết nối ngoài).'))}
+leave6(false);const mk=n=>{if(n>5)return md(err('Không tạo được phòng, thử lại sau.'));const code=gen(),p=new Peer('cqq-'+code);O.peer=p;O.host=1;O.code=code;
+p.on('open',()=>md(`<h2>🌐 Phòng của bạn</h2><p>Gửi mã này cho bạn bè (họ bấm “🔑 Vào phòng bằng mã”):</p><div class="code">${code}</div><div class="row"><button data-a="copy">📋 Sao chép mã</button></div><p class="note">${G.ico} ${G.name}. Chơi online không dùng đồng hồ. Đang chờ bạn bè vào… hãy giữ nguyên trang này.</p><button class="gh" data-a="cancel">Hủy phòng</button>`));
+p.on('error',e=>{if(e.type=='unavailable-id'){try{p.destroy()}catch(x){}mk(n+1)}else md(err('Lỗi kết nối: '+e.type))});
+p.on('connection',c=>{if(O.conn&&O.conn.open){const f=()=>{c.send(JSON.stringify({t:'full'}));setTimeout(()=>c.close(),300)};c.open?f():c.on('open',f);return}attach(c)})};mk(0)}
+function askJoin(){md('<h2>🔑 Vào phòng</h2><p>Nhập mã phòng bạn bè gửi:</p><input class="ci" id="jc" maxlength="5" placeholder="MÃ PHÒNG" autocomplete="off"><button data-a="jgo">Vào phòng</button><button class="gh" data-a="x">Hủy</button>');setTimeout(()=>{const i=$('#jc');i&&i.focus()},50)}
+async function joinRoom(code){code=(code||'').toUpperCase().replace(/[^A-Z0-9]/g,'');if(code.length<5)return toast('Mã phòng gồm 5 ký tự');md(`<h2>🔑 Đang vào phòng ${code}…</h2>`);
+try{await lp()}catch(e){return md(err('Không tải được PeerJS. Kiểm tra mạng, và trang phải chạy trên web của bạn.'))}
+leave6(false);O.code=code;O.host=0;const p=new Peer();O.peer=p;
+O.to=setTimeout(()=>{if(!O.conn||!O.conn.open)md(err('Không kết nối được tới phòng '+code+'. Kiểm tra mã hoặc mạng (một số mạng chặn kết nối trực tiếp).'))},20000);
+p.on('open',()=>attach(p.connect('cqq-'+code,{reliable:true})));
+p.on('error',e=>{clearTimeout(O.to);md(err(e.type=='peer-unavailable'?'Không tìm thấy phòng '+code+'. Kiểm tra lại mã.':'Lỗi kết nối: '+e.type))})}
+
+/* ===== nối vào luật chơi hiện có ===== */
+const _dm=doMove;
+doMove=function(m){if(O.on&&R&&!R.S.over){if(R.S.turn!==O.side)return;send({t:'mv',m})}_dm(m)};
+['#ps','#fg'].forEach(s=>$(s).addEventListener('click',e=>{if(O.on&&R&&R.S.turn!==O.side)e.stopImmediatePropagation()},true));
+$('#rs').addEventListener('click',e=>{if(!O.on||!R||R.S.over)return;e.stopImmediatePropagation();send({t:'rs',w:O.side});R.S.over={w:1-O.side,why:'Bạn đã đầu hàng'};endGame()},true);
+$('#ov').addEventListener('click',e=>{if(!O.on||!R)return;const a=e.target.dataset&&e.target.dataset.a;
+if(a=='again'){e.stopImmediatePropagation();$('#ov').hidden=1;if(O.host)startHost();else{send({t:'again'});toast('Đã gửi lời mời chơi lại, chờ chủ phòng…')}}
+else if(a=='menu')leave6(true)},true);
+$('#mn').addEventListener('click',()=>{if(O.peer||O.on)leave6(true)},true);
+/* khách xem bàn từ phía mình; đảo thanh tên người chơi */
+Object.values(Games).forEach(G=>{if(!G.view||G.noflip)return;const v=G.view;G.view=function(S,ui,o){return v.call(G,S,ui,O.on?{...o,flip:O.side==1}:o)}});
+const _d6=draw;draw=function(){_d6();try{if(!R)return;const G=R.G,cr=G.id=='caro';$('#bd').classList.toggle('cz',cr);$('#cz6').hidden=!cr;
+if(cr){const S=R.S;$('#zt6').textContent=(S.n?S.n+'×'+S.n:'♾️ vô hạn')+' · '+S.k+' quân · tầm nhìn ~'+Math.round(cam.v)+' ô'}
+if(O.on){if(O.side==1&&!G.noflip){const t=$('#top'),b=$('#bot'),h=t.innerHTML;t.innerHTML=b.innerHTML;b.innerHTML=h}
+$('#sc').textContent=`🌐 Phòng ${O.code} · Bạn là Người ${O.side+1} (${G.sides[O.side]})`+(R.S.over?'':R.S.turn===O.side?' · ĐẾN LƯỢT BẠN':' · chờ bạn bè…')}}catch(e){console.error(e)}};
+})();
+</script>
 </body></html>
 
